@@ -1,0 +1,37 @@
+<!-- Breadcrumbs -->
+<div class="page-title" data-ng-include="'tpl/parts/breadcrumbs.html'"></div>
+<!-- /Breadcrumbs -->
+
+<div class="card-panel">
+  Con uses <a href="http://www.flotcharts.org/">Flot charts</a>. This is a pure JavaScript plotting library for jQuery, with a focus on simple usage, attractive looks and interactive features..
+</div>
+
+<div class="row">
+  <div class="col l7 s12">
+    <!-- Line Chart -->
+    <div class="card-panel">
+      <h4>Interactive Linechart</h4>
+      <flot dataset="flot1data" options="flot1opts" style="display: block; height: 250px"></flot>
+    </div>
+    <!-- /Line Chart -->
+  </div>
+  <div class="col l5 s12">
+    <!-- Pie Chart -->
+    <div class="card-panel">
+      <h4>Pie Chart</h4>
+      <flot dataset="flot2data" options="flot2opts" style="display: block; height: 250px"></flot>
+    </div>
+    <!-- /Pie Chart -->
+  </div>
+</div>
+
+<!-- Realtime Chart -->
+<div class="row">
+  <div class="col s12">
+    <div class="card-panel">
+      <h4>Realtime Chart</h4>
+      <flot dataset="flot3data" options="flot3opts" style="display: block; height: 250px"></flot>
+    </div>
+  </div>
+</div>
+<!-- /Realtime Chart -->

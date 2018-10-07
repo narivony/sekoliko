@@ -1,0 +1,88 @@
+<!-- Breadcrumbs -->
+<div class="page-title" data-ng-include="'tpl/parts/breadcrumbs.html'"></div>
+<!-- /Breadcrumbs -->
+
+<div class="card-panel">
+  Con uses NVD3.js charts. You can see <a href="http://nvd3.org/examples/index.html">official examples</a>.
+</div>
+
+
+<div class="row">
+  <!--  Line Chart  -->
+  <div class="col s12 l6">
+    <div class="card">
+      <div class="title">
+        <h5>Line Chart</h5>
+        <a class="close" href="#">
+          <i class="mdi-content-clear"></i>
+        </a>
+        <a class="minimize" href="#">
+          <i class="mdi-navigation-expand-less"></i>
+        </a>
+      </div>
+      <div class="content">
+        <nvd3 options="chart1opts" data="chart1data" style="height: 300px;"></nvd3>
+      </div>
+    </div>
+  </div>
+  <!--  /Line Chart  -->
+
+  <!--  Stacked Area Chart  -->
+  <div class="col s12 l6">
+    <div class="card">
+      <div class="title">
+        <h5>Stacked Area Chart</h5>
+        <a class="close" href="#">
+          <i class="mdi-content-clear"></i>
+        </a>
+        <a class="minimize" href="#">
+          <i class="mdi-navigation-expand-less"></i>
+        </a>
+      </div>
+      <div class="content">
+        <nvd3 options="chart2opts" data="chart2data" style="height: 300px;"></nvd3>
+      </div>
+    </div>
+  </div>
+  <!--  /Stacked Area Chart  -->
+</div>
+
+<div class="row">
+  <!--  Discrete Bar Chart  -->
+  <div class="col s12 l6">
+    <div class="card">
+      <div class="title">
+        <h5>Discrete Bar Chart</h5>
+        <a class="close" href="#">
+          <i class="mdi-content-clear"></i>
+        </a>
+        <a class="minimize" href="#">
+          <i class="mdi-navigation-expand-less"></i>
+        </a>
+      </div>
+      <div class="content">
+        <nvd3 options="chart3opts" data="chart3data" style="height: 300px;"></nvd3>
+      </div>
+    </div>
+  </div>
+  <!--  /Discrete Bar Chart  -->
+
+  <!--  Pie Chart  -->
+  <div class="col s12 l6">
+    <div class="card">
+      <div class="title">
+        <h5>Pie Chart</h5>
+        <a class="close" href="#">
+          <i class="mdi-content-clear"></i>
+        </a>
+        <a class="minimize" href="#">
+          <i class="mdi-navigation-expand-less"></i>
+        </a>
+      </div>
+      <div class="content">
+        <nvd3 options="chart4opts" data="chart4data" style="height: 300px;"></nvd3>
+      </div>
+    </div>
+  </div>
+  <!--  /Pie Chart  -->
+</div>

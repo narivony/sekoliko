@@ -1,0 +1,104 @@
+/* 
+    Created on : 27 déc. 2016, 09:44:32
+    Author     : Niaina
+*/
+
+.kl-list-count {
+    font-size: 2.1em;
+    font-weight: bold;
+    text-align: center;
+}
+
+.kl-btn-mini-rectif{
+    margin-right: 5px;
+}
+
+.kl-custom-checkbox-list {
+    margin-right: 20px;
+}
+
+.kl-delete-btn-custom {
+    bottom: 40px;
+    position: relative;
+    right: 10px;
+}
+
+.kl-checkbox-custom-style {
+    margin-left: 5px !important;
+}
+
+.kl-logo-mini > img {
+    width: 45px;
+}
+
+.kl-img-vignette {
+    max-width: 150px;
+}
+
+.kl-hide {
+    display: none;
+}
+
+/* Personnalisation thème AdminLTE */
+.skin-blue .main-header .logo {
+    background-color: white;
+}
+
+.skin-blue .main-header .navbar {
+    background-color: #ca1f2a;
+}
+
+.skin-blue .sidebar-menu > li:hover > a, .skin-blue .sidebar-menu > li.active > a {
+    border-left-color: #ca1f2a;
+}
+
+.skin-blue .main-header li.user-header {
+    background-color: #ca1f2a;
+}
+
+.skin-blue .main-header .logo:hover {
+    background-color: white;
+}
+.kl-number-right{
+    text-align: right;
+}
+.kl-oui-non{
+    text-align: center;
+}
+
+/* Autocomplete */
+.ui-autocomplete-loading {
+    background: white url("../../img/ui-anim_basic_16x16.gif") right center no-repeat;
+}
+
+/*Tableaux pour toutes les pages*/
+table{
+    margin: 0 auto;
+    clear: both;
+    border-collapse: collapse;
+    table-layout: fixed;
+    word-wrap:break-word;
+    word-break: break-all;
+}
+
+/*Tableau Dashboard groupes récents*/
+.kl-nom{
+    width: 80px;
+}
+.kl-adresse{
+    width: 100px;
+}
+.kl-ville{
+    width: 100px;
+}
+.kl-date-dispo{
+    width: 130px;
+}
+.kl-progression{
+    width: 100px;
+}
+
+.kl-error-message {
+    color: red;
+}
+

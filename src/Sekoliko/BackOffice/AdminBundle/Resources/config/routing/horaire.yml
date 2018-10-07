@@ -1,0 +1,34 @@
+horaire_list_ajax:
+    path:     /list-ajax
+    defaults: { _controller: "AdminBundle:SekolikoHoraire:listAjax" }
+    methods:  GET
+
+horaire_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:SekolikoHoraire:index" }
+    methods:  GET
+
+horaire_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:SekolikoHoraire:new" }
+    methods:  [GET, POST]
+
+horaire_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:SekolikoHoraire:edit" }
+    methods:  [GET, POST]
+
+horaire_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:SekolikoHoraire:update" }
+    methods:  [POST, PUT]
+
+horaire_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:SekolikoHoraire:delete" }
+    methods:  [GET, DELETE]
+
+horaire_delete_group:
+    path:     /delete-group
+    defaults: { _controller: "AdminBundle:SekolikoHoraire:deleteGroup" }
+    methods:  POST

@@ -1,0 +1,48 @@
+@media screen and (max-width: 375px) {
+    .card-panel{ padding: 0px!important;margin-left: -6px; box-shadow: 0 0px 0px !important;background-color: transparent;}
+    .table-responsive { border: none!important; }
+}
+@media screen and (max-width: 654px){
+    .kl-footer p {margin-left: 17% !important;}
+}
+@media screen and (max-width: 400px) {
+    a.paginate_button.next{ width: 100%!important; }
+    a.paginate_button.previous { width: 100%!important; }
+    a.paginate_button { width: auto!important;}
+    .modal .modal-content {padding: 0px!important;}
+}
+@media screen and (max-width: 460px){
+    .kl-box-title {font-size:23px!important}
+    .kl-custom-h4 {font-size: 12px!important;}
+    .modal { max-height: 67%!important; width: 94%!important;}
+    .modal.modal-content { padding: 0px!important; }
+    .kl-body-modal {padding-right: 0px!important;}
+}
+@media screen and (max-width:400px ){
+    .btn, .btn-large, .sp-container button, .fc button, .btn-flat { margin: 15px;  border: none;
+        border-radius: 2px; display: inline-block; height: 36px; line-height: 3rem; outline: 0;
+        text-transform: uppercase; vertical-align: middle; -webkit-tap-highlight-color: transparent;
+    }
+    .kl-btn-remove-fct {text-align: center!important;}
+    .kl-button-index { border: none; border-radius: 2px; display: inline-block; height: 36px;
+        line-height: 2.5rem; outline: 0; padding: 0 2rem; text-transform: uppercase;
+        vertical-align: middle; -webkit-tap-highlight-color: transparent;
+    }
+}
+@media screen and (max-width: 635px){
+    .kl-custom-col { padding-right: 0px!important;}
+    .kl-fct-show-content {  width: 100%; margin-left: 0px;}
+    .kl-body { padding: 0px !important; }
+}
+@media screen and (max-width: 565px) {
+.kl-btn-fc {width: 100%;margin: 2px!important;}
+.kl-btn-footer {width: 100%;margin: 5px}
+.box-footer input { margin-left: 5px; }
+.add-btn-top-list button {margin-left: -15px}
+.kl-btn-remove-fct { text-align:center; margin: 5px;}
+.kl-delete-btn {width: 100%}
+.kl-add-btn-top-list button {width: 100%}
+.kl-h2-eqplot { font-size: 1.3rem; }
+.kl-h2-lot { font-size: 23px; text-align: center; }
+.kl-card-db {margin: 5px!important;}
+}

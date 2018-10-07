@@ -1,0 +1,64 @@
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface: bcrypt
+
+    role_hierarchy:
+        ROLE_PERSONNEL: ROLE_USER
+        ROLE_SUPERADMIN: [ROLE_USER, ROLE_ALLOWED_TO_SWITCH]
+
+    providers:
+        fos_userbundle:
+            id: fos_user.user_provider.username_email
+
+    firewalls:
+        dev:
+            pattern: ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+
+        main:
+            pattern: ^/
+            provider: fos_userbundle
+            anonymous: true
+            form_login:
+                provider: fos_userbundle
+                csrf_token_generator: security.csrf.token_manager
+                login_path: /login
+                check_path: /login_check
+                always_use_default_target_path: false
+                default_target_path: /admin/
+            logout:
+                path: /logout
+                target: /
+            remember_me:
+                secret:   secret
+                lifetime: 604800 # 1 week in seconds
+                path: /
+
+    access_control:
+        - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+
+        - { path: ^/admin/role/*, role: [ ROLE_PERSONNEL ] }
+        - { path: ^/admin/horaire$, role: [ ROLE_PERSONNEL ] }
+        - { path: ^/admin/horaire/new$, role: [ ROLE_PERSONNEL  ] }
+        - { path: ^/admin/horaire/[0-9]+/edit$, role: [ ROLE_PERSONNEL ] }
+        - { path: ^/admin/horaire/[0-9]+/delete$, role: [ ROLE_PERSONNEL  ] }
+        - { path: ^/admin/horaire/, role: [ ROLE_PERSONNEL ] }
+
+        - { path: ^/admin/jour-ferie$, role: [ ROLE_PERSONNEL ] }
+        - { path: ^/admin/jour-ferie/new$, role: [ ROLE_PERSONNEL  ] }
+        - { path: ^/admin/jour-ferie/[0-9]+/edit$, role: [ ROLE_PERSONNEL  ] }
+        - { path: ^/admin/jour-ferie/[0-9]+/delete$, role: [ ROLE_PERSONNEL  ] }
+        - { path: ^/admin/jour-ferie/, role: [ , ROLE_PERSONNEL ] }
+
+        - { path: ^/admin/user/[0-9]+/edit$, role: [  ROLE_PERSONNEL ] }
+        - { path: ^/admin/user/[0-9]+/update$, role: [  ROLE_PERSONNEL ] }
+        - { path: ^/admin/user$, role: [ ROLE_PERSONNEL  ] }
+        - { path: ^/admin/user/new$, role: [ ROLE_PERSONNEL  ] }
+        - { path: ^/admin/user/[0-9]+/delete$, role: [  ROLE_PERSONNEL  ] }
+        - { path: ^/admin/user/, role: [ ROLE_PERSONNEL  ] }
+
+        - { path: ^/admin/$, role: [ ROLE_PERSONNEL ] }
+
+

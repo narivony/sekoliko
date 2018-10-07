@@ -1,0 +1,46 @@
+{% extends "UserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+
+    <section id="sign-in">
+        <canvas id="bubble-canvas"></canvas>
+        <form action="{{ path('fos_user_security_check') }}" method="post">
+            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
+            <div class="row links">
+                <div class="col s6 logo">
+                    <img src="#" alt="logo" />
+                </div>
+                <div class="col s6 right-align">
+                    <strong>Accès Sekoliko management</strong>
+                </div>
+            </div>
+            <div class="card-panel clearfix">
+                <div class="row">
+                    <div class="col"></div>
+                </div>
+                <div class="input-field">
+                    <i class="fa fa-user prefix"></i>
+                    <input id="username-input username" type="text" name="_username" value="" class="validate">
+                    <label for="username-input">Nom d'utilisateur</label>
+                </div>
+                <div class="input-field">
+                    <i class="fa fa-unlock-alt prefix"></i>
+                    <input id="password-input password" type="password" name="_password" class="validate">
+                    <label for="password-input">Mot de passe</label>
+                </div>
+                <button id="login-form-submit" class="waves-effect waves-light btn-large z-depth-0 z-depth-1-hover">
+                    Connexion
+                </button>
+            </div>
+            {# S'il y a une erreur, on l'affiche dans un joli cadre #}
+            {% if error is defined %}
+                <div class="alert alert-danger text-center" style="text-align: center">
+                    {{ error.messageKey|trans(error.messageData, 'security') }}
+                </div>
+            {% endif %}
+        </form>
+    </section>
+{% endblock %}
+
+	
+

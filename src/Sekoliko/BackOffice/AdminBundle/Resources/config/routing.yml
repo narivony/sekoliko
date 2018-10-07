@@ -1,0 +1,19 @@
+sekoliko_dashboard:
+    resource: "@AdminBundle/Resources/config/routing/dashboard.yml"
+    prefix:   /
+
+sekoliko_role:
+    resource: "@AdminBundle/Resources/config/routing/role.yml"
+    prefix:   /role
+
+sekoliko_cms:
+    resource: "@AdminBundle/Resources/config/routing/cms.yml"
+    prefix:   /cms
+
+sekoliko_jour_ferie:
+    resource: "@AdminBundle/Resources/config/routing/jour_ferie.yml"
+    prefix:   /jour-ferie
+
+sekoliko_horaire:
+    resource: "@AdminBundle/Resources/config/routing/horaire.yml"
+    prefix:   /horaire

@@ -1,0 +1,46 @@
+<!-- Breadcrumbs -->
+<div class="page-title" data-ng-include="'tpl/parts/breadcrumbs.html'"></div>
+<!-- /Breadcrumbs -->
+
+
+<div class="card-panel">
+  Con uses <a href="http://code.shutterstock.com/rickshaw/">Rickshaw charts</a>. This is a JavaScript toolkit for creating interactive time series graphs.
+</div>
+
+<div class="row">
+  <div class="col l6 s12">
+    <!-- Line Chart -->
+    <div class="card-panel">
+      <h4>Line</h4>
+      <rickshaw rickshaw-options="rickshaw1options" rickshaw-features="rickshaw1features" rickshaw-series="rickshaw1series"></rickshaw>
+    </div>
+    <!-- /Line Chart -->
+  </div>
+  <div class="col l6 s12">
+    <!-- Stacked Area Chart -->
+    <div class="card-panel">
+      <h4>Stacked Area</h4>
+      <rickshaw rickshaw-options="rickshaw2options" rickshaw-series="rickshaw2series"></rickshaw>
+    </div>
+    <!-- /Stacked Area Chart -->
+  </div>
+</div>
+
+<div class="row">
+  <div class="col l6 s12">
+    <!-- Stacked Bars Chart -->
+    <div class="card-panel">
+      <h4>Stacked Bars</h4>
+      <rickshaw rickshaw-options="rickshaw3options" rickshaw-series="rickshaw3series"></rickshaw>
+    </div>
+    <!-- /Stacked Bars Chart -->
+  </div>
+  <div class="col l6 s12">
+    <!-- Multiple Bars Chart -->
+    <div class="card-panel">
+      <h4>Multiple Bars</h4>
+      <rickshaw rickshaw-options="rickshaw4options" rickshaw-series="rickshaw4series"></rickshaw>
+    </div>
+    <!-- /Multiple Bars Chart -->
+  </div>
+</div>

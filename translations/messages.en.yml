@@ -1,0 +1,43 @@
+#Header
+header.menu.home: Home
+header.menu.langage.en: English
+header.menu.langage.fr: French
+header.menu.contact: Contact
+
+#Footer
+footer.left.home: Home
+footer.left.title: Site
+footer.link.contact: Contact
+footer.middle.title: Business
+footer.right.phone: Phone
+
+#Contact
+contact.title : Contact form
+contact.standard : Standard contact
+contact.professional : Contact professional
+contact.us : Contact Us
+contact.firstname : Firstname
+contact.lastname : Lastname
+contact.phone : Phone
+contact.address : Address
+contact.message : Your message
+contact.send : Send
+contact.mail.sent : Email has been sent
+contact.mail.not.sent : Email was not sent
+
+#Email
+email.bonjour : Hello
+email.resume : Below is the summary of your demand you made
+email.inscription : Below is a information of your account after register
+email.merci : Thanks
+
+#Newsletter
+newsletter.confirmation.unsubscriber: You are now unsubscribed from the newsletter
+
+#Confirmation BO
+bo.confirmation.ajout: Enregistrement effectué avec succès
+bo.confirmation.modification: Modification effectuée avec succès
+bo.confirmation.suppression: Suppression effectuée avec succès
+bo.confirmation.selection.suppression: Veuillez sélectionner un élément à supprimer
+bo.confirmation.newsletter.envoi.mail: Mail newsletter envoyé avec succès
+bo.datatable.no.enregistrement : Aucun enregistrement trouvé

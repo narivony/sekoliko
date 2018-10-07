@@ -1,0 +1,34 @@
+{% spaceless %}
+    {% set aaData = {} %}
+    {% for jour_ferie in values %}
+
+            {% set input = '<input type="checkbox" value="' ~ jour_ferie.id ~ '" name="delete[]" />' %}
+
+            {% set action = '<div class="kl-td">
+                                <a class="btn green kl-button-index tooltipped"
+                                   href="' ~ path('jour_ferie_edit', { 'id': jour_ferie.id }) ~ '"
+                                   data-position="top" data-delay="50" data-tooltip="' ~ 'bo.index.td.title.modifier'|trans ~ '">
+                                    <i class="fa fa-edit"></i>
+                                </a>
+                                <a class="btn red kl-button-index kl-remove-elt red tooltipped"
+                                   href="' ~ path('jour_ferie_delete', { 'id': jour_ferie.id }) ~ '"
+                                   data-position="top" data-delay="50" data-tooltip="' ~ 'bo.index.td.title.supprimer'|trans ~ '">
+                                    <i class="fa fa-trash"></i>
+                                </a>
+                             </div>'
+            %}
+            {%
+                set value = [
+                    input,
+                    jour_ferie.jrFerNom,
+                    jour_ferie.jrFerDate|date('d/m/Y'),
+                    action
+                ]
+            %}
+        {% set aaData = aaData|merge({ (loop.index0): value }) %}
+    {% endfor %}
+{% endspaceless %}
+
+{% set data_json = data|merge({ 'aaData': aaData} ) %}
+{{ data_json|json_encode|raw }}
+

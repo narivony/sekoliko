@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>{% block title %} Accès Sekoliko management {% endblock %}</title>
+        <!-- Tell the browser to be responsive to screen width -->
+        <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+        <link href='http://fonts.googleapis.com/css?family=Roboto:400,100,300,500,700,900' rel='stylesheet' type='text/css'>
+        <!-- nanoScroller -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('backoffice/bower_components/nanoscroller/bin/css/nanoscroller.css') }}" />
+        <!-- FontAwesome -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('backoffice/bower_components/fontawesome/css/font-awesome.min.css') }}" />
+        <!-- Material Design Icons -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('backoffice/assets/material-design-icons/css/material-design-icons.min.css') }}" />
+        <!-- IonIcons -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('backoffice/bower_components/ionicons/css/ionicons.min.css') }}" />
+        <!-- WeatherIcons -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('backoffice/bower_components/weather-icons/css/weather-icons.min.css') }}" />
+        <!-- Main -->
+        <link rel="stylesheet" type="text/css" href="{{ asset('backoffice/assets/_con/css/con-base.css') }}" />
+        <link rel="stylesheet" type="text/css" href="{{ asset('backoffice/css/custom.css') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}" />
+        <!--[if lt IE 9]>
+        <script src="{{ asset('backoffice/bower_components/html5shiv/dist/html5shiv.min.js') }}"></script>
+        <![endif]-->
+    </head>
+
+
+    <body class="hold-transition login-page">
+        <div class="login-box">
+            <div class="login-box-body">
+                <div class="col s4 kl-content-alert">
+                    {% for type, messages in app.session.flashBag.all %}
+                        {% for message in messages %}
+                            <div class="{{ type }}">
+                                {{ message|trans({}, 'FOSUserBundle') }}
+                            </div>
+                        {% endfor %}
+                    {% endfor %}
+
+                    {% block fos_user_content %}
+                    {% endblock fos_user_content %}
+                </div>
+
+            </div>
+        </div>
+        <!-- jQuery -->
+        <script type="text/javascript" src="{{ asset('backoffice/bower_components/jquery/dist/jquery.min.js') }}"></script>
+        <!-- jQuery RAF (improved animation performance) -->
+        <script type="text/javascript" src="{{ asset('backoffice/bower_components/jquery-requestAnimationFrame/dist/jquery.requestAnimationFrame.min.js') }}"></script>
+        <!-- nanoScroller -->
+        <script type="text/javascript" src="{{ asset('backoffice/bower_components/nanoscroller/bin/javascripts/jquery.nanoscroller.min.js') }}"></script>
+        <!-- Materialize -->
+        <script type="text/javascript" src="{{ asset('backoffice/bower_components/materialize/bin/materialize.js') }}"></script>
+        <!-- Sortable -->
+        <script type="text/javascript" src="{{ asset('backoffice/bower_components/Sortable/Sortable.min.js') }}"></script>
+        <!-- Main -->
+        <script type="text/javascript" src="{{ asset('backoffice/assets/_con/js/_con.js') }}"></script>
+        <!-- Google Prettify -->
+        <script type="text/javascript" src="{{ asset('backoffice/bower_components/code-prettify/src/prettify.js') }}"></script>
+    </body>
+</html>

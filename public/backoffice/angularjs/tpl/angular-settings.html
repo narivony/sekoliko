@@ -1,0 +1,125 @@
+<!-- Breadcrumbs -->
+<div class="page-title" data-ng-include="'tpl/parts/breadcrumbs.html'"></div>
+<!-- /Breadcrumbs -->
+
+<div class="card-panel">
+  Con AngularJS version has some settings that you can change in <strong>factory settings</strong>.
+</div>
+
+<!-- Maps -->
+<div class="card-panel">
+  <h4>Main</h4>
+  <p class="switch">
+    <label>
+      <input type="checkbox" ng-model="settings.rtl" />
+      <span class="lever"></span>
+      RTL
+    </label>
+  </p>
+  <p class="switch">
+    <label>
+      <input type="checkbox" ng-model="settings.boxed" />
+      <span class="lever"></span>
+      Boxed Layout
+    </label>
+  </p>
+  <div class="row">
+    <div class="col m4">
+      
+      <h4>Navbar</h4>
+      <p class="switch">
+        <label>
+          <input type="checkbox" ng-model="settings.navbar.dark" />
+          <span class="lever"></span>
+          Dark color
+        </label>
+      </p>
+      <p class="switch">
+        <label>
+          <input type="checkbox" ng-model="settings.navbar.static" />
+          <span class="lever"></span>
+          Static position
+        </label>
+      </p>
+      <p class="switch">
+        <label>
+          <input type="checkbox" ng-model="settings.navbar.under" />
+          <span class="lever"></span>
+          Under sidebar
+        </label>
+      </p>
+
+    </div>
+    <div class="col m4">
+          
+      <h4>Sidebar</h4>
+      <p class="switch">
+        <label>
+          <input type="checkbox" ng-model="settings.sidebar.hideToSmall" />
+          <span class="lever"></span>
+          Hide to small
+        </label>
+      </p>
+      <p class="switch">
+        <label>
+          <input type="checkbox" ng-model="settings.sidebar.static" />
+          <span class="lever"></span>
+          Static position
+        </label>
+      </p>
+      <p class="switch">
+        <label>
+          <input type="checkbox" ng-model="settings.sidebar.gestures" />
+          <span class="lever"></span>
+          Gestures support (swipe on touch screens)
+        </label>
+      </p>
+      <p class="switch">
+        <label>
+          <input type="checkbox" ng-model="settings.sidebar.light" />
+          <span class="lever"></span>
+          Light color
+        </label>
+      </p>
+      <!--p class="switch">
+        <label>
+          <input type="checkbox" ng-model="settings.sidebar.overlayContent" />
+          <span class="lever"></span>
+          Overlay content when opened
+        </label>
+      </p-->
+      
+      <label>Effect</label>
+      <select ng-model="settings.sidebar.effect" material-select>
+        <option ng-repeat="value in ['shrink', 'push', 'overlay']">{{value}}</option>
+      </select>
+
+    </div>
+    <div class="col m4">
+
+      <h4>Chat</h4>
+      <p class="switch">
+        <label>
+          <input type="checkbox" ng-model="settings.chat.light" />
+          <span class="lever"></span>
+          Light
+        </label>
+      </p>
+
+    </div>
+  </div>
+
+  <!-- More space under content to check features -->
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+  <br><br><br><br><br><br><br>
+</div>
+<!-- /Maps -->

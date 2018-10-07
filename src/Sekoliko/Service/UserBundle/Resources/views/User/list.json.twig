@@ -1,0 +1,49 @@
+{% spaceless %}
+    {% set aaData = {} %}
+    {% for user in values %}
+        {% set photo_profil = user.usrPhoto %}
+        {% if photo_profil is null or not file_exists(web_path ~ user.usrPhoto) %}
+            {% set photo_profil = asset('img/no-image-available.png') %}
+        {% endif %}
+        {% set action = '' %}
+
+            {% set action =  '
+            <div class="kl-td">
+                           <a class="btn grey btn-info kl-show-details tooltipped"
+                            href="' ~ path('user_show', { 'id': user.id }) ~ '"
+                            data-show-title="Details utilisateur"
+                            data-position="top" data-delay="50" data-tooltip="details utilisateur"
+                           >
+                            <i class="fa fa-eye"></i>
+                        </a>
+                         <a class="btn green btn-success kl-button-index tooltipped"
+                           href="' ~ path('user_edit', { 'id': user.id }) ~ '"
+                           data-position="top" data-delay="50" data-tooltip="' ~ 'bo.index.td.title.modifier'|trans ~ '"
+                           >
+                            <i class="fa fa-edit"></i>
+                        </a>
+                        <a class="btn red btn-danger kl-button-index kl-remove-elt red tooltipped"
+                           data-position="top" data-delay="50" data-tooltip="' ~ 'bo.index.td.title.supprimer'|trans ~ '"
+                           href="' ~ path('user_delete', { 'id': user.id }) ~ '">
+                            <i class="fa fa-trash"></i>
+                        </a>
+                       </div>'
+                %}
+
+        {%
+            set value = [
+                '<input type="checkbox" value="' ~ user.id ~ '" name="delete[]" />',
+                '<img src="' ~ photo_profil|imagine_filter('photo_user_profil_miniature') ~ '"
+                             class="circle circle photo wow rotateIn" alt="' ~ user.username ~ '">',
+                user.usrFullname,
+                user.email,
+                user.usrPhone,
+                action,
+            ]
+        %}
+        {% set aaData = aaData|merge({ (loop.index0): value }) %}
+    {% endfor %}
+{% endspaceless %}
+
+{% set data_json = data|merge({ 'aaData': aaData} ) %}
+{{ data_json|json_encode|raw }}

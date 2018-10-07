@@ -1,0 +1,53 @@
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_sekolikoctices/configuration.html#application-related-configuration
+imports:
+    - { resource: "@UserBundle/Resources/config/services.yml" }
+
+parameters:
+    locale: 'fr'
+    mailer_transport: '%env(resolve:MAILER_TRANSPORT)%'
+    mailer_host: '%env(resolve:MAILER_HOST)%'
+    mailer_user: '%env(resolve:MAILER_USER)%'
+    mailer_password: '%env(resolve:MAILER_PASSWORD)%'
+    to_email_address: '%env(resolve:TO_EMAIL_ADDRESS)%'
+    from_email_address: '%env(resolve:FROM_EMAIL_ADDRESS)%'
+    from_firstname: '%env(resolve:FROM_FIRSTNAME)%'
+
+services:
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{Migrations}'
+
+    sekoliko.manager.authentification.handler:
+        class: App\Sekoliko\Service\UserBundle\Redirection\AuthenticationHandler
+        arguments: [ "@router","@session"]
+        public: true
+
+    sekoliko.twig.file.exists:
+        class: App\Sekoliko\Service\MetierManagerBundle\Twig\Extension\FileExistsExtension
+        arguments: ['@service_container']
+        tags:
+            - { name: twig.extension }
+
+    sekoliko.manager.utils:
+        class: App\Sekoliko\Service\MetierManagerBundle\Metier\Utils\ServiceMetierUtils
+        arguments: [ "@doctrine.orm.entity_manager","@service_container"]
+        public: true
+
+    sekoliko.manager.dashboard:
+       class: App\Sekoliko\Service\MetierManagerBundle\Metier\SekolikoDashboard\ServiceMetierDashboard
+       arguments: [ "@doctrine.orm.entity_manager","@service_container"]
+       public: true
+
+    sekoliko.manager.horaire:
+        class: App\Sekoliko\Service\MetierManagerBundle\Metier\SekolikoHoraire\ServiceMetierSekolikoHoraire
+        arguments: [ "@doctrine.orm.entity_manager","@service_container"]
+        public: true
+
+    sekoliko.manager.jour.ferie:
+        class: App\Sekoliko\Service\MetierManagerBundle\Metier\SekolikoJourFerie\ServiceMetierSekolikoJourFerie
+        arguments: [ "@doctrine.orm.entity_manager","@service_container"]
+        public: true
+

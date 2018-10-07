@@ -1,0 +1,485 @@
+<!-- Breadcrumbs -->
+<div class="page-title" data-ng-include="'tpl/parts/breadcrumbs.html'"></div>
+<!-- /Breadcrumbs -->
+
+
+<!-- Stats Card -->
+<div class="card-panel">
+  <h4>Stats Card</h4>
+  <div class="row">
+    <div class="col l4 s12">
+      <p>Use <code>.name</code> and <code>.count</code> classnames for this card.</p>
+      <div class="card-panel stats-card blue lighten-2 blue-text text-lighten-5">
+        <i class="fa fa-comments-o"></i>
+        <span class="count">145</span>
+        <div class="name">Feedbacks</div>
+      </div>
+
+    </div>
+    <div class="col l8 s12">
+
+      <pre class="prettyprint linenums no-margin">
+&lt;div class="card-panel stats-card blue blue-text text-lighten-5">
+  &lt;i class="fa fa-comments-o">&lt;/i>
+  &lt;span class="count">145&lt;/span>
+  &lt;div class="name">Feedbacks&lt;/div>
+&lt;/div></pre>
+
+    </div>
+  </div>
+
+  
+  <div class="row">
+    <div class="col l4 s12">
+      <p>Use <code>.large</code> classname to increase height of card and text sizes.</p>
+      <div class="card-panel stats-card large amber lighten-2 amber-text text-lighten-5">
+        <i class="fa fa-cloud-upload"></i>
+        <span class="count">58</span>
+        <div class="name">Uploads</div>
+      </div>
+
+    </div>
+    <div class="col l8 s12">
+
+      <pre class="prettyprint linenums no-margin">
+&lt;div class="card-panel stats-card large amber lighten-2 amber-text text-lighten-5">
+  &lt;i class="fa fa-cloud-upload">&lt;/i>
+  &lt;span class="count">58&lt;/span>
+  &lt;div class="name">Uploads&lt;/div>
+&lt;/div></pre>
+
+    </div>
+  </div>
+
+  
+  <div class="row">
+    <div class="col l4 s12">
+      <p>Use <a href="ui-progress-bars.html">progress-bars</a> to set progress in bottom, top (<code>.top</code>) or background (<code>.background</code>).</p>
+      <div class="card-panel stats-card white red-text text-lighten-2">
+        <i class="ion-fireball"></i>
+        <span class="count">139</span>
+        <div class="name">Firebals</div>
+
+        <div class="progress tiny">
+          <div class="red" style="width: 81%"></div>
+        </div>
+
+        <div class="progress tiny top">
+          <div class="red" style="width: 31%"></div>
+        </div>
+      </div>
+
+      <div class="card-panel stats-card white-text">
+        <div class="progress teal lighten-4 background">
+          <div class="teal lighten-2" style="width: 64%"></div>
+        </div>
+
+        <i class="mdi-action-restore"></i>
+        <span class="count">64%</span>
+        <div class="name">Resore</div>
+      </div>
+
+    </div>
+    <div class="col l8 s12">
+
+      <pre class="prettyprint linenums no-margin">
+&lt;div class="card-panel stats-card white red-text text-lighten-2">
+  &lt;i class="ion-fireball">&lt;/i>
+  &lt;span class="count">139&lt;/span>
+  &lt;div class="name">Firebals&lt;/div>
+  
+  &lt;!-- Bottom Progress -->
+  &lt;div class="progress tiny">
+    &lt;div class="red" style="width: 81%">&lt;/div>
+  &lt;/div>
+
+  &lt;!-- Top Progress -->
+  &lt;div class="progress tiny top">
+    &lt;div class="red" style="width: 31%">&lt;/div>
+  &lt;/div>
+&lt;/div>
+
+&lt;div class="card-panel stats-card white-text">
+  &lt;!-- Background Progress -->
+  &lt;div class="progress teal lighten-4 background">
+    &lt;div class="teal lighten-2" style="width: 64%">&lt;/div>
+  &lt;/div>
+  
+  &lt;i class="mdi-action-restore">&lt;/i>
+  &lt;span class="count">64%&lt;/span>
+  &lt;div class="name">Resore&lt;/div>
+&lt;/div></pre>
+
+    </div>
+  </div>
+
+  
+  <div class="row">
+    <div class="col l4 s12">
+      <p>Use <code>.graph</code> classname to insert <a href="charts-sparkline.html">Sparkline charts</a>.</p>
+      <div class="card-panel stats-card grey-text lighten-1-text">
+        <i class="fa fa-spinner"></i>
+        <span class="count">37%</span>
+        <div class="name">Server Load</div>
+
+        <div class="graph">
+          <div id="sparkcard"></div>
+        </div>
+      </div>
+
+    </div>
+    <div class="col l8 s12">
+
+      <pre class="prettyprint linenums no-margin">
+&lt;div class="card-panel stats-card grey-text lighten-1-text">
+  &lt;i class="fa fa-spinner">&lt;/i>
+  &lt;span class="count">37%&lt;/span>
+  &lt;div class="name">Server Load&lt;/div>
+
+  &lt;div class="graph">
+    &lt;div id="sparkcard">&lt;/div>
+  &lt;/div>
+&lt;/div>
+
+&lt;script>
+  $("#sparkcard").conSparkline([76,78,87,65,43,35,23,25,12,14,27,35,32,37,31,46,43,32,36,57,78,87,82,75,58,54,70  ], {
+    type: 'line',
+    width: '100%',
+    height: 73,
+    lineColor: '#9E9E9E',
+    fillColor: false,
+    highlightSpotColor: '#009688',
+    spotColor: false,
+    minSpotColor: false,
+    maxSpotColor: false,
+    highlightLineColor: '#9E9E9E',
+    spotRadius: 0});
+&lt;/script></pre>
+
+    </div>
+  </div>
+
+</div>
+<!-- /Stats Card -->
+
+<!-- Weather Card -->
+<div class="card-panel">
+  <h4>Weather Card</h4>
+  <div class="row">
+    <div class="col l4 s12">
+
+      <div class="card-panel weather-card blue-grey lighten-1 white-text">
+        <p class="center"><i class="fa fa-spinner fa-pulse"></i> Weather</p>
+      </div>
+
+    </div>
+    <div class="col l8 s12">
+
+      <pre class="prettyprint linenums no-margin">
+&lt;div class="card-panel weather-card blue-grey lighten-1 white-text">
+  &lt;p class="center">&lt;i class="fa fa-spinner fa-pulse">&lt;/i> Weather&lt;/p>
+&lt;/div></pre>
+
+    </div>
+  </div>
+</div>
+<!-- /Weather Card -->
+
+<!-- Weather Card (Static) -->
+<div class="card-panel">
+  <h4>Weather Card (Static)</h4>
+  <div class="row">
+    <div class="col l4 s12">
+
+      <div class="card-panel weather-card-static blue-grey lighten-1 white-text">
+        <div class="row">
+          <div class="temp col s7">-3°C <span class="alt">27°F</span></div>
+          <div class="city col s5"><i class="fa fa-map-marker"></i> City</div>
+        </div>
+        <div class="icon"><i class="wi wi-cloud"></i></div>
+        <div class="currently">Cloudy</div>
+      </div>
+
+    </div>
+    <div class="col l8 s12">
+
+      <pre class="prettyprint linenums no-margin">
+&lt;div class="card-panel weather-card-static blue-grey lighten-1 white-text">
+  &lt;div class="row">
+    &lt;div class="temp col s7">-3°C &lt;span class="alt">27°F&lt;/span>&lt;/div>
+    &lt;div class="city col s5">&lt;i class="fa fa-map-marker">&lt;/i> City&lt;/div>
+  &lt;/div>
+  &lt;div class="icon">&lt;i class="wi wi-cloud">&lt;/i>&lt;/div>
+  &lt;div class="currently">Cloudy&lt;/div>
+&lt;/div></pre>
+
+    </div>
+  </div>
+</div>
+<!-- /Weather Card (Static) -->
+
+<!-- Image Card -->
+<div class="card-panel">
+  <h4>Image Card</h4>
+  <div class="row">
+    <div class="col l4 m12">
+      <div class="card image-card" style="max-width:250px;">
+        <div class="image">
+          <img src="../assets/_con/images/user11.jpg" alt="">
+          <a href="page-profile.html" class="link"></a>
+        </div>
+        <div class="content">
+          <h5>Darren Cunningham</h5>
+        </div>
+      </div>
+    </div>
+    <div class="col l8 m12">
+      <pre class="prettyprint linenums no-margin">
+&lt;div class="card image-card">
+  &lt;div class="image">
+    &lt;img src="../assets/_con/images/user11.jpg" alt="">
+    &lt;a href="page-profile.html" class="link">&lt;/a>
+  &lt;/div>
+  &lt;div class="content">
+    &lt;h5>Darren Cunningham&lt;/h5>
+  &lt;/div>
+&lt;/div></pre>
+    </div>
+  </div>
+</div>
+<!-- /Image Card -->
+
+<!-- Orders Card -->
+<div class="card-panel">
+  <h4>Orders Card</h4>
+  <div class="row">
+    <div class="col l4 s12">
+
+      <div class="card-panel orders-card">
+        <h4>3,729</h4>
+        <div class="row">
+          <div class="col s6">
+            <small>Total Orders</small>
+          </div>
+          <div class="col s6 right-align">
+            77% <i class="fa fa-level-down red-text"></i>
+          </div>
+        </div>
+        <div class="progress small">
+          <div class="determinate" style="width: 77%"></div>
+        </div>
+
+        <h4>$7,180</h4>
+        <div class="row">
+          <div class="col s6">
+            <small>Total Income</small>
+          </div>
+          <div class="col s6 right-align">
+            43% <i class="fa fa-level-up green-text"></i>
+          </div>
+        </div>
+        <div class="progress small">
+          <div class="determinate" style="width: 43%"></div>
+        </div>
+
+        <h4>27</h4>
+        <div class="row">
+          <div class="col s6">
+            <small>Total Refunds</small>
+          </div>
+          <div class="col s6 right-align">
+            7%
+          </div>
+        </div>
+        <div class="progress small">
+          <div class="determinate" style="width: 7%"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col l8 s12">
+
+      <pre class="prettyprint linenums no-margin">
+&lt;div class="card-panel orders-card">
+  &lt;h4>3,729&lt;/h4>
+  &lt;div class="row">
+    &lt;div class="col s6">
+      &lt;small>Total Orders&lt;/small>
+    &lt;/div>
+    &lt;div class="col s6 right-align">
+      77% &lt;i class="fa fa-level-down red-text">&lt;/i>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="progress small">
+    &lt;div class="determinate" style="width: 77%">&lt;/div>
+  &lt;/div>
+  ...
+&lt;/div></pre>
+
+    </div>
+  </div>
+</div>
+<!-- /Orders Card -->
+
+
+<!-- TODO -->
+<div class="card-panel">
+  <h4>TODO</h4>
+  <div class="row">
+    <div class="col l4 s12">
+
+      <div class="card-panel todo-card">
+        <div class="todo-task">
+          <input type="checkbox" id="checkbox1" checked="checked">
+          <label for="checkbox1">Change passwords on accounts <span class="todo-remove mdi-action-delete"></span></label>
+        </div>
+
+        <div class="todo-task">
+          <input type="checkbox" id="checkbox2">
+          <label for="checkbox2">Make video for Youtube <span class="todo-remove mdi-action-delete"></span></label>
+        </div>
+
+        <div class="todo-task">
+          <input type="checkbox" id="checkbox3">
+          <label for="checkbox3">Gain popularity on Envato <span class="todo-remove mdi-action-delete"></span></label>
+        </div>
+
+        <div class="input-field">
+          <input id="todo-add" type="text">
+          <label for="todo-add">Add New</label>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col l8 s12">
+
+      <pre class="prettyprint linenums no-margin">
+&lt;div class="card-panel todo-card">
+  &lt;div class="todo-task">
+    &lt;input type="checkbox" id="checkbox1" checked="checked">
+    &lt;label for="checkbox1">Change passwords on accounts &lt;span class="todo-remove mdi-action-delete">&lt;/span>&lt;/label>
+  &lt;/div>
+
+  &lt;div class="todo-task">
+    &lt;input type="checkbox" id="checkbox2">
+    &lt;label for="checkbox2">Make video for Youtube &lt;span class="todo-remove mdi-action-delete">&lt;/span>&lt;/label>
+  &lt;/div>
+
+  &lt;div class="todo-task">
+    &lt;input type="checkbox" id="checkbox3">
+    &lt;label for="checkbox3">Gain popularity on Envato &lt;span class="todo-remove mdi-action-delete">&lt;/span>&lt;/label>
+  &lt;/div>
+
+  &lt;div class="input-field">
+    &lt;input id="todo-add" type="text">
+    &lt;label for="todo-add">Add New&lt;/label>
+  &lt;/div>
+&lt;/div></pre>
+
+    </div>
+  </div>
+</div>
+<!-- /TODO -->
+
+
+<!-- Mail -->
+<div class="card-panel">
+  <h4>Mail</h4>
+  <div class="row">
+    <div class="col l4 s12">
+
+      <div class="card-panel mail-card">
+        <div class="row">
+          <div class="col s8">
+            <a href="mail-view.html">
+              <strong>Dianne Chambers</strong>
+            </a>
+          </div>
+          <div class="col s4 right-align">
+            <small>9:02 AM</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <a href="mail-view.html">
+
+            Ut feugiat tempus felis, sit amet mattis dolor accumsan quis. Aenean pharetra tempus justo, vitae euismod ipsum congue a.
+
+          </a>
+          </div>
+        </div>
+
+        <hr>
+
+        <div class="row">
+          <div class="col s8">
+            <a href="mail-view.html">
+              <strong>Joanne Stephens</strong>
+            </a>
+          </div>
+          <div class="col s4 right-align">
+            <small>Dec 19</small>
+          </div>
+        </div>
+        <div class="row">
+          <div class="col">
+            <a href="mail-view.html">
+
+            Proin suscipit lobortis porta. Interdum et malesuada fames ac ante ipsum primis in faucibus.
+
+          </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="col l8 s12">
+
+      <pre class="prettyprint linenums no-margin">
+&lt;div class="card-panel mail-card">
+  &lt;div class="row">
+    &lt;div class="col s8">
+      &lt;a href="mail-view.html">
+        &lt;strong>Dianne Chambers&lt;/strong>
+      &lt;/a>
+    &lt;/div>
+    &lt;div class="col s4 right-align">
+      &lt;small>9:02 AM&lt;/small>
+    &lt;/div>
+  &lt;/div>
+  &lt;div class="row">
+    &lt;div class="col">
+      &lt;a href="mail-view.html">
+
+      Ut feugiat tempus felis, sit amet mattis dolor accumsan quis. Aenean pharetra tempus justo, vitae euismod ipsum congue a.
+
+    &lt;/a>
+    &lt;/div>
+  &lt;/div>
+
+  &lt;hr>
+  ...
+&lt;/div></pre>
+
+    </div>
+  </div>
+</div>
+<!-- /Mail -->
+
+<script>
+  $("#sparkcard").conSparkline([76,78,87,65,43,35,23,25,12,14,27,35,32,37,31,46,43,32,36,57,78,87,82,75,58,54,70  ], {
+    type: 'line',
+    width: '100%',
+    height: 73,
+    lineColor: '#9E9E9E',
+    fillColor: false,
+    highlightSpotColor: '#009688',
+    spotColor: false,
+    minSpotColor: false,
+    maxSpotColor: false,
+    highlightLineColor: '#9E9E9E',
+    spotRadius: 0});
+</script>

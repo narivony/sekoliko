@@ -1,0 +1,29 @@
+cms_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:SekolikoCms:index" }
+    methods:  GET
+
+cms_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:SekolikoCms:new" }
+    methods:  [GET, POST]
+
+cms_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:SekolikoCms:edit" }
+    methods:  [GET, POST]
+
+cms_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:SekolikoCms:update" }
+    methods:  [POST, PUT]
+
+cms_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:SekolikoCms:delete" }
+    methods:  [GET, DELETE]
+
+cms_delete_group:
+    path:     /delete-group
+    defaults: { _controller: "AdminBundle:SekolikoCms:deleteGroup" }
+    methods:  POST

@@ -1,0 +1,13 @@
+.nav .open>a, .nav .open>a:focus, .nav .open>a:hover {
+    background-color: #0e6892;
+    border-color: #337ab7;
+}
+.label, .label.label-default {
+    background-color: #f16f14!important;
+}
+.sk-img-nav {border-radius: 50%;width: 40px;}
+.circle{border-radius: 50%}
+.sk-footer {background: black;color: white}
+th{background: cyan;color: black}
+td{text-align: center!important;}
+th{text-align: center!important;}

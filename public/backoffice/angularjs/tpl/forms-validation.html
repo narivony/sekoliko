@@ -1,0 +1,167 @@
+<!-- Breadcrumbs -->
+<div class="page-title" data-ng-include="'tpl/parts/breadcrumbs.html'"></div>
+<!-- /Breadcrumbs -->
+
+
+<div class="card-panel">
+  Con uses <strong>ParsleyJS</strong> for validate forms. You can see basic usage below. Full docuemntation and examples see here <a href="http://parsleyjs.org/">http://parsleyjs.org/</a>.
+
+  <br>
+  Begin to use the plugin with this step:
+  <pre class="prettyprint linenums no-margin">
+&lt;script type="text/javascript" src="assets/parsley/parsley.min.js">&lt;/script></pre>
+</div>
+
+<div class="card-panel">
+  <form data-parsley-validate>
+
+    <!-- Validation -->
+    <h4>Validation</h4>
+    <div class="row">
+      <div class="col l5 m12">
+        
+        <!-- Name -->
+        <div class="input-field">
+          <input id="input-name" type="text" required>
+          <label for="input-name">Name</label>
+        </div>
+        <!-- /Name -->
+
+        <!-- Email -->
+        <div class="input-field">
+          <input id="input-email" type="email" required>
+          <label for="input-email">Email</label>
+        </div>
+        <!-- /Email -->
+
+        <!-- Gender -->
+        <p>
+          <input name="radio-gender" type="radio" id="radio-gender-1" required />
+          <label for="radio-gender-1">Male</label>
+          <input name="radio-gender" type="radio" id="radio-gender-2" />
+          <label for="radio-gender-2">Female</label>
+        </p>
+        <!-- /Gender -->
+        
+        <!-- Hobbies -->
+        <label>Hobbies (2 minimum):</label>
+        <p>
+          <input name="check-hobbies" type="checkbox" id="check-skiing" value="skiing" data-parsley-mincheck="2" required />
+          <label for="check-skiing">Skiing</label>
+          <input name="check-hobbies" type="checkbox" id="check-running" value="running" />
+          <label for="check-running">Running</label>
+          <input name="check-hobbies" type="checkbox" id="check-eating" value="eating" />
+          <label for="check-eating">Eating</label>
+          <input name="check-hobbies" type="checkbox" id="check-sleeping" value="sleeping" />
+          <label for="check-sleeping">Sleeping</label>
+        </p>
+        <!-- /Hobbies -->
+        
+        <!-- Heard -->
+        <select name="heard" required>
+          <option value="" disabled selected>Choose option</option>
+          <option value="press">Press</option>
+          <option value="internet">Internet</option>
+          <option value="mouth">Word of mouth</option>
+          <option value="other">Other...</option>
+        </select>
+        <!-- /Heard -->
+
+        <!-- Message -->
+        <div class="input-field">
+          <textarea id="textarea-msg" class="materialize-textarea" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-validation-threshold="10" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.." required></textarea>
+          <label  for="textarea-msg">Message (20 chars min, 100 max):</label>
+        </div>
+        <!-- /Message -->
+        
+        <!-- Validation Button -->
+        <div class="row">
+          <div class="col s12">
+            <button class="btn">Validate</button>
+          </div>
+        </div>
+        <!-- /Validation Button -->
+
+      </div>
+      <div class="col l7 m12">
+        <pre class="prettyprint linenums no-margin height-auto">
+&lt;form data-parsley-validate>
+
+  &lt;!-- Name -->
+  &lt;div class="input-field">
+    &lt;input id="input-name" type="text" required>
+    &lt;label for="input-name">Name&lt;/label>
+  &lt;/div>
+  &lt;!-- /Name -->
+
+  &lt;!-- Email -->
+  &lt;div class="input-field">
+    &lt;input id="input-email" type="email" required>
+    &lt;label for="input-email">Email&lt;/label>
+  &lt;/div>
+  &lt;!-- /Email -->
+
+  &lt;!-- Gender -->
+  &lt;p>
+    &lt;input name="radio-gender" type="radio" id="radio-gender-1" required />
+    &lt;label for="radio-gender-1">Male&lt;/label>
+    &lt;input name="radio-gender" type="radio" id="radio-gender-2" />
+    &lt;label for="radio-gender-2">Female&lt;/label>
+  &lt;/p>
+  &lt;!-- /Gender -->
+  
+  &lt;!-- Hobbies -->
+  &lt;label>Hobbies (2 minimum):&lt;/label>
+  &lt;p>
+    &lt;input name="check-hobbies" type="checkbox" id="check-skiing" value="skiing" data-parsley-mincheck="2" required />
+    &lt;label for="check-skiing">Skiing&lt;/label>
+    &lt;input name="check-hobbies" type="checkbox" id="check-running" value="running" />
+    &lt;label for="check-running">Running&lt;/label>
+    &lt;input name="check-hobbies" type="checkbox" id="check-eating" value="eating" />
+    &lt;label for="check-eating">Eating&lt;/label>
+    &lt;input name="check-hobbies" type="checkbox" id="check-sleeping" value="sleeping" />
+    &lt;label for="check-sleeping">Sleeping&lt;/label>
+  &lt;/p>
+  &lt;!-- /Hobbies -->
+  
+  &lt;!-- Heard -->
+  &lt;select name="heard" required>
+    &lt;option value="" disabled selected>Choose option&lt;/option>
+    &lt;option value="press">Press&lt;/option>
+    &lt;option value="internet">Internet&lt;/option>
+    &lt;option value="mouth">Word of mouth&lt;/option>
+    &lt;option value="other">Other...&lt;/option>
+  &lt;/select>
+  &lt;!-- /Heard -->
+
+  &lt;!-- Message -->
+  &lt;div class="input-field">
+    &lt;textarea id="textarea-msg" class="materialize-textarea" name="message" data-parsley-trigger="keyup" data-parsley-minlength="20" data-parsley-maxlength="100" data-parsley-validation-threshold="10" data-parsley-minlength-message="Come on! You need to enter at least a 20 caracters long comment.." required>&lt;/textarea>
+    &lt;label  for="textarea-msg">Message (20 chars min, 100 max):&lt;/label>
+  &lt;/div>
+  &lt;!-- /Message -->
+
+  &lt;!-- Validation Button -->
+  &lt;div class="row">
+    &lt;div class="col s12">
+      &lt;button class="btn">Validate&lt;/button>
+    &lt;/div>
+  &lt;/div>
+  &lt;!-- /Validation Button -->
+
+&lt;form>
+
+&lt;script>
+  // init parsley
+  $('[data-parsley-validate]').parsley();
+&lt;/script></pre>
+      </div>
+    </div>
+    <!-- /Validation -->
+
+  <form>
+</div>
+
+<script>
+  $('[data-parsley-validate]').parsley();
+</script>

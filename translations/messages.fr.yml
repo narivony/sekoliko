@@ -1,0 +1,322 @@
+#Header
+header.menu.home: Accueil
+header.menu.langage.en: Anglais
+header.menu.langage.fr: Français
+header.menu.contact: Contact
+
+#Footer
+footer.left.home: Accueil
+footer.left.title: Site
+footer.link.contact: Contact
+footer.middle.title: Entreprise
+footer.right.phone: Tel
+
+#Contact
+contact.title : Formulaire de contact
+contact.standard : Contact standard
+contact.professional : Contact professionnel
+contact.us : Contactez-nous
+contact.firstname : Prénom(s)
+contact.lastname : Nom
+contact.phone : Téléphone
+contact.address : Adresse
+contact.message : Votre message
+contact.send : Envoyer
+contact.mail.sent : Email a été bien envoyé
+contact.mail.not.sent : Email n'a pas été envoyé
+
+#Email
+email.bonjour : Bonjour
+email.resume : Ci-dessous le résumé de la demande que vous avez fait
+email.inscription : Ci-dessous les informations de votre compte après inscription
+email.merci : Merci
+email.content: Voici le contenu du mail
+
+#Newsletter
+newsletter.confirmation.unsubscriber: Vous êtes maintenant désabonné du newsletter
+
+#Confirmation BO
+bo.confirmation.ajout: Enregistrement effectué avec succès
+bo.confirmation.modification: Modification effectuée avec succès
+bo.confirmation.suppression: Suppression effectuée avec succès
+bo.confirmation.selection.suppression: Veuillez sélectionner un élément à supprimer
+bo.confirmation.newsletter.envoi.mail: Mail newsletter envoyé avec succès
+bo.datatable.no.enregistrement : Aucun enregistrement trouvé
+
+#
+bo.index.total: TOTAL:
+bo.index.th.action: Action
+bo.index.td.title.voir: Voir
+bo.index.td.title.modifier: Modifier
+bo.index.td.title.supprimer: Supprimer
+bo.button.suppression: Supprimer la sélection
+bo.button.retour: Retour à la liste
+bo.button.enregistrer: Enregistrer
+bo.button.modifier: Modifier
+
+# BO Sidebar
+bo.sidebar.menu: Menus
+bo.sidebar.tableaudebord: Tableau de bord
+bo.sidebar.menu.administrateur: Administrateur
+bo.sidebar.sousmenu.utilisateur: Utilisateurs
+bo.sidebar.sousmenu.role: Rôles
+bo.sidebar.menu.donneedebase: Données de Base
+bo.sidebar.menu.donneeadministratif: Données Administratives
+bo.sidebar.menu.donnee: Données
+bo.sidebar.sousmenu.typefonction: Types de fonction
+bo.sidebar.sousmenu.pole: Pôles
+bo.sidebar.sousmenu.statuttache: Statuts des tâches
+bo.sidebar.sousmenu.statutlotprojet: Statuts des lots de projet
+bo.sidebar.sousmenu.typeprojet: Types de projet
+bo.sidebar.sousmenu.projet: Projets
+bo.sidebar.menu.projet: Projets
+bo.sidebar.sousmenu.lot: Lots
+bo.sidebar.sousmenu.equipe: Equipes
+bo.sidebar.sousmenu.tache: Tâches
+bo.sidebar.sousmenu.useradditionnel: Additionnel utilisateur
+bo.sidebar.sousmenu.typeabsence: Evénements
+bo.sidebar.sousmenu.jour.ferie: Jour férié
+bo.sidebar.sousmenu.presentation: Présentation
+bo.sidebar.sousmenu.pagepresentation: Page de présentation
+bo.sidebar.sousmenu.categorie: Page de présentation
+bo.sidebar.sousmenu.horaire: Horaire de travail
+
+# Tableau de bord
+bo.dashboard.p.msgdebienvenu: Bienvenue dans la gestion backoffice
+
+# Utilisateur index
+bo.user.index.title: Liste des utilisateurs
+bo.user.index.button.ajout: Créer un utilisateur
+bo.user.index.th.nom: Nom
+bo.user.index.th.email: Email
+bo.user.index.th.adresse: Adresse
+bo.user.index.th.role: Rôle
+bo.user.index.th.dateinscription: Date inscription
+
+# Utilisateur add
+bo.user.add.title: Ajout Utilisateur
+bo.user.add.h3.title: Créer un utilisateur
+bo.user.add.label.fonction: Fonction
+bo.user.add.option.value: Sélectionner le fonction
+bo.user.add.label.datedebut: Date de début
+bo.user.add.label.datefin: Date de fin
+bo.user.add.button.ajout: Ajouter une autre fonction
+
+# Utilisateur edit
+bo.user.edit.title : Modification Utilisateur
+bo.user.edit.h3.title : Editer un utilisateur
+
+# Utilisateur show
+bo.user.show.title: Fiche utilisateur
+bo.user.show.h3.title: Détails utilisateur
+bo.user.show.fullname: Nom & Prénom
+bo.user.show.email: Email
+bo.user.telephone: Téléphone
+bo.user.show.adresse: Adresse
+bo.user.show.button.ajout: Ajouter une fonction
+bo.user.show.th.pole: Pôle
+bo.user.show.th.fonction: Fonction
+bo.user.show.th.datedebut: Date Début
+bo.user.show.th.datefin: Date Fin
+
+# Rôle index
+bo.role.index.title: Liste des rôles
+bo.role.index.th.nom: Nom
+
+#Fonction index
+bo.fonction.index.title: Liste des fonctions
+bo.fonction.index.button.ajout: Créer un type de fonction
+bo.fonction.index.th.libelle: Libellé
+bo.fonction.index.th.pole: Pôle
+bo.fonction.index.th.description: Description
+
+#Fonction add
+bo.fonction.add.title: Ajout Type Fonction
+bo.fonction.add.h3.title: Créer un type de fonction
+
+#Fonction edit
+bo.fonction.edit.title: Modification Type Fonction
+bo.fonction.edit.h3.title: Editer un type fonction
+
+# Pôle index
+bo.pole.index.title: Liste des pôles
+bo.pole.index.button.ajout: Créer un pôle
+bo.pole.index.th.libelle: Libellé
+bo.pole.index.th.description: Description
+
+# Pôle add
+bo.pole.add.title: Ajout Pôle
+bo.pole.add.h3.title: Créer un pôle
+
+# Pôle edit
+bo.pole.edit.title: Modification Pôle
+bo.pole.edit.h3.title: Editer un pôle
+
+# Jour Ferié index
+bo.jour.ferie.index.title: Liste des jours fériés
+bo.jour.ferie.index.button.ajout: Créer un jour férié
+bo.jour.ferie.index.th.libelle: Nom
+bo.jour.ferie.index.th.description: Date
+
+# Jour Ferié add
+bo.jour.ferie.add.title: Ajout jour férié
+bo.jour.ferie.add.h3.title: Créer un jour férié
+
+# Jour Ferié edit
+bo.jour.ferie.edit.title: Modification jour férié
+bo.jour.ferie.edit.h3.title: Editer un jour férié
+
+# Statuts des tâches index
+bo.statut.tache.index.title: Liste des statuts des tâches
+bo.statut.tache.index.button.ajout: Créer un statut
+bo.statut.tache.index.th.libelle: Libellé
+
+# Statuts des tâches add
+bo.statut.tache.add.title: Ajout Statut
+bo.statut.tache.add.h3.title: Créer un statut
+
+# Statuts des tâches edit
+bo.statut.tache.edit.title: Modification Statut
+bo.statut.tache.edit.h3.title: Editer un statut
+
+# Statuts des lots de projet index
+bo.statut.lot.projet.index.title: Liste des statuts des lots projets
+bo.statut.lot.projet.index.button.ajout: Créer un statut d'un lot de projet
+bo.statut.lot.projet.index.th.libelle: Libellé
+
+# Statuts des lots de projet add
+bo.statut.lot.projet.add.title: Ajout statut lot projet
+bo.statut.lot.projet.add.h3.title: Créer un statut de lot de projet
+
+# Statuts des lots de projet edit
+bo.statut.lot.projet.edit.title: Modification d'un statut de lot de projet
+bo.statut.lot.projet.edit.h3.title: Editer le statut d'un lot de projet
+
+# Type de projet index
+bo.typeprojet.index.title: Liste des types de projet
+bo.typeprojet.index.button.ajout: Créer un type de projet
+bo.typeprojet.index.th.libelle: Libellé
+
+# Type de projet add
+bo.typeprojet.add.title: Ajout type projet
+bo.typeprojet.add.h3.title: Créer un type de projet
+
+# Type de projet edit
+bo.typeprojet.edit.title: Modification type projet
+bo.typeprojet.edit.h3.title: Editer un type de projet
+
+# Projet index
+bo.projet.index.title: Liste des projets
+bo.projet.index.button.ajout: Créer un projet
+bo.projet.index.th.typeprojet: Type de projet
+bo.projet.index.th.nom: Nom
+bo.projet.index.th.abreviation: Abréviation
+bo.projet.index.th.dateobtention: Date obtention
+bo.projet.index.th.dateajout: Date ajout
+
+# Projet add
+bo.projet.add.title: Ajout projet
+bo.projet.add.h3.title: Créer un projet
+
+# Projet edit
+bo.projet.edit.title: Modification projet
+bo.projet.edit.h3.title: Editer un projet
+
+# Projet lots index
+bo.projet.lot.index.title: Liste des lots de projet
+bo.projet.lot.index.button.ajout: Créer lot
+bo.projet.lot.index.th.projet: Projet
+bo.projet.lot.index.th.nomlot: Nom lot
+bo.projet.lot.index.th.description: Description
+bo.projet.lot.index.th.dateajout: Date Ajout
+bo.projet.lot.index.th.dateprevuelivraison: Date Prévue Livraison
+bo.projet.lot.index.th.datelivraison: Date Livraison
+bo.projet.lot.index.th.statut: Statut
+
+# Lots add
+bo.projet.lot.add.title: Ajout Lot
+bo.projet.lot.add.h3.title: Créer un nouveau lot
+
+# Lots edit
+bo.projet.lot.edit.title: Modification Lot
+bo.projet.lot.edit.h3.title: Modifier un Lot
+
+# Equipes index
+bo.equipe.index.title: Liste des equipes
+bo.equipe.index.button.ajout: Créer equipe
+bo.equipe.index.th.nomequipe: Nom equipe
+bo.equipe.index.th.lot: Lot
+bo.equipe.index.th.employe: Employé
+bo.equipe.index.th.responsable: Responsable
+bo.equipe.index.th.datedebut: Date début
+bo.equipe.index.th.datefin: Date fin
+
+# Equipes add
+bo.equipe.add.title: Ajout Equipe
+bo.equipe.add.h3.title: Créer une nouvelle equipe
+
+# Tâches index
+bo.tache.index.title: Liste des tâches
+bo.tache.index.button.ajout: Créer une tâche
+bo.tache.index.button.statut.encours: Tâche en cours
+bo.tache.index.button.statut.termine: Tâche terminée
+bo.tache.index.th.projet: Projet
+bo.tache.index.th.libelle: Libellé
+bo.tache.index.th.dateattribution: Date d'attribution
+bo.tache.index.th.datedebut: Date de début
+bo.tache.index.th.datefin: Date de fin
+bo.tache.index.th.estimationpersonnelle: Estimation personnelle (h)
+bo.tache.index.th.estimationresponsable: Estimation Responsable (h)
+bo.tache.index.th.assignation: Assignée à
+bo.tache.index.th.tacheparente: Tâche parente
+bo.tache.index.th.lot: Lot
+bo.tache.index.th.statut: Statut
+
+# Tâches add
+bo.tache.add.title: Ajout Tâche
+bo.tache.add.h3.title: Créer une tâche
+
+# Tâches edit
+bo.tache.edit.title: Modification Tâche
+bo.tache.edit.h3.title: Editer une tâche
+
+# User additionnel
+bo.user.additionnel.index.title: Liste des additionnels utilisateurs
+bo.user.additionnel.index.button.ajout: Créer un additionnel utilisateur
+bo.user.additionnel.index.th.tache: Tâche
+bo.user.additionnel.index.th.employe: Employé
+bo.user.additionnel.index.th.remarque: Remarque
+bo.user.additionnel.index.th.datedebut: Date début
+bo.user.additionnel.index.th.datefin: Date fin
+bo.user.additionnel.index.th.duree: Durée
+bo.user.additionnel.index.th.estretart: Retard
+
+# User additionnel add
+bo.user.additionnel.add.title: Ajout additionnel utilisateur
+bo.user.additionnel.add.h3.title: Créer un additionnel utilisateur
+
+# User additionnel edit
+bo.user.additionnel.edit.title: Modification additionnel utilisateur
+bo.user.additionnel.edit.h3.title: Editer un additionnel utilisateur
+
+# Alertes
+bo.alertes: Alertes
+bo.alertes.retard.title: Alertes retards
+bo.alertes.additionnel.title: Alertes additionnel utilisateur
+bo.alertes.retard.h3.title: Retard sur les tâches
+bo.alertes.additionnel.h3.title: Additionnel utilisateur
+
+#Dashboard administration
+bo.projet.bientot.a.livrer.h5.title: Projet(s) lot(s) à livrer bientôt
+bo.personnel.bientot.a.absenter.h5.title: Les personnels qui vont bientôt s'absenter
+
+# Projet index
+bo.horaire.index.title: Liste des horaires de travaille
+bo.horaire.index.button.ajout: Créer un horaire de travail
+bo.horaire.add.h3.title: Création horaire de travail
+bo.horaire.edit.h3.title: Editer horaire de travail
+bo.horaire.index.th.date.debut: Date début saison
+bo.horaire.index.th.date.fin: Date fin saison
+bo.horaire.index.th.heure.debut: Heure début
+bo.horaire.index.th.heure.fin: Heure fin
+bo.horaire.index.th.duree: Durée de travail

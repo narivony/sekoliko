@@ -1,0 +1,143 @@
+<!-- Breadcrumbs -->
+<div class="page-title" data-ng-include="'tpl/parts/breadcrumbs.html'"></div>
+<!-- /Breadcrumbs -->
+
+<div class="card-panel">
+  Con uses jQuery DataTables. See detailed documentation on <a href="http://www.datatables.net/">http://www.datatables.net/</a>
+</div>
+
+
+<!-- Base -->
+<div class="card-panel">
+  <h4>Base</h4>
+
+  <table datatable="ng" dt-options="table1opts" class="display table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Start date</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="person in tablesData">
+        <td>{{ person.name }}</td>
+        <td>{{ person.position }}</td>
+        <td>{{ person.office }}</td>
+        <td>{{ person.start }}</td>
+        <td>{{ person.salary }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- /Base -->
+
+
+<!-- With Search -->
+<div class="card-panel">
+  <h4>With Search</h4>
+
+  <table datatable="ng" dt-options="table2opts" class="display table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Start date</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="person in tablesData">
+        <td>{{ person.name }}</td>
+        <td>{{ person.position }}</td>
+        <td>{{ person.office }}</td>
+        <td>{{ person.start }}</td>
+        <td>{{ person.salary }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- /With Search -->
+
+
+<!-- With Vertical Scroll -->
+<div class="card-panel">
+  <h4>With Vertical Scroll</h4>
+
+  <table datatable="ng" dt-options="table3opts" class="display table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Start date</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="person in tablesData">
+        <td>{{ person.name }}</td>
+        <td>{{ person.position }}</td>
+        <td>{{ person.office }}</td>
+        <td>{{ person.start }}</td>
+        <td>{{ person.salary }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- /With Vertical Scroll -->
+
+
+<!-- With Export Options -->
+<div class="card-panel">
+  <h4>With Export Options</h4>
+
+  <table datatable="ng" dt-options="table4opts" class="display table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Position</th>
+        <th>Office</th>
+        <th>Start date</th>
+        <th>Salary</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="person in tablesData">
+        <td>{{ person.name }}</td>
+        <td>{{ person.position }}</td>
+        <td>{{ person.office }}</td>
+        <td>{{ person.start }}</td>
+        <td>{{ person.salary }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- /With Export Options -->
+
+
+<!-- Big Data + AJAX -->
+<div class="card-panel">
+  <h4>Big Data + AJAX</h4>
+
+  <table datatable="ng" dt-options="table5opts" class="display table table-bordered table-striped table-hover">
+    <thead>
+      <tr>
+        <th>ID</th>
+        <th>First name</th>
+        <th>Last name</th>
+        <th>ZIP / Post code</th>
+        <th>Country</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr ng-repeat="person in aa">
+        <!-- For prevent strange error -->
+      </tr>
+    </tbody>
+  </table>
+</div>
+<!-- /Big Data + AJAX -->

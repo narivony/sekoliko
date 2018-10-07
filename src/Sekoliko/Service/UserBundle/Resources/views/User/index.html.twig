@@ -1,0 +1,117 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% block title %}{{ parent() }} {{ 'bo.user.index.title'| trans }} {% endblock %}
+
+{% set menu_user      = true %}
+{% set menu_user_list = true %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <!-- affichage drowpdown dataTable -->
+    <link rel="stylesheet" href="{{ asset ('backoffice/css/table.ajax.css') }}">
+    <link rel="stylesheet" href="{{ asset ('backoffice/css/custom-table.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert green lighten-4 green-text text-darken-2">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="alert red lighten-4 green-text text-darken-2">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header card-header-icon" data-background-color="purple">
+                            <div class="list-count">
+                                <span class="kl-title-count"></span>
+                            </div>
+                        </div>
+                        {# Bouton création #}
+                        <div class="row add-btn-top-list">
+                            <a href="{{ path('user_new') }}" onclick=";">
+                                <button class="btn btn-primary">
+                                    <i class="fa fa-address-book-o" aria-hidden="true"></i>
+                                    {{ 'bo.user.index.button.ajout'| trans }}
+                                </button>
+                            </a>
+                        </div>
+
+                    <form action="{{ path('user_delete_group') }}" method="POST" class="form-search">
+                        <div class="card-content">
+                            <h5>{{ 'bo.user.index.title'| trans }}</h5>
+                            <div class="material-datatables">
+                                <table id="list-user" class="display table table-bordered table-striped table-hover">
+                                    <thead>
+                                    <tr>
+                                        <th></th>
+                                        <th>Photo</th>
+                                        <th>{{ 'bo.user.index.th.nom'| trans }}</th>
+                                        <th>{{ 'bo.user.index.th.email'| trans }}</th>
+                                        <th>Téléphone</th>
+                                        <th>{{ 'bo.index.th.action'| trans }}</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody></tbody>
+                                </table>
+                                {# Bouton suppression #}
+                                <a href="#">
+                                    <button type="submit" name="_group_delete" class="btn btn-danger kl-delete-btn red">
+                                        <i class="fa fa-trash"></i>
+                                        {{ 'bo.button.suppression'| trans }}
+                                    </button>
+                                </a>
+                            </div>
+                        </div>
+                    </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript">
+        $(function () {
+            $('#list-user').DataTable({
+                "aaSorting": [],
+                "bProcessing": true,
+                "bFilter": true,
+                "bServerSide": true,
+                "sAjaxSource": "{{ path('user_list_ajax') }}",
+                "oLanguage": {
+                    "sProcessing": "<i class='fa fa-spinner fa-spin fa-2x kl-spin-ajax'></i>",
+                    "oPaginate": {
+                        "sPrevious": "Précédente", // This is the link to the previous page
+                        "sNext": "Suivante", // This is the link to the next page
+                    },
+                    "sSearch": "Filtrer: ",
+                    "sLengthMenu": "Afficher _MENU_ enregistrement par page",
+                    "sEmptyTable": "{{ 'bo.datatable.no.enregistrement'|trans }}",
+                    "sZeroRecords":  "{{ 'bo.datatable.no.enregistrement'|trans }}",
+                    "sInfo": "Voir _TOTAL_ de _PAGE_ pour _PAGES_ entrées",
+                    "sInfoEmpty": "Aucun enregistrement",
+                },
+                "processing" : true,
+                "footerCallback": function ( row, data, start, end, display ) {
+                    $('.kl-title-count').html(display.length);
+                },
+                "drawCallback": function (settings) {
+                    $('.kl-title-count').html(settings.json.iTotalRecords);
+                    $('.tooltipped').tooltip();
+                }
+            });
+        });
+    </script>
+{% endblock %}

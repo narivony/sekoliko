@@ -1,0 +1,17 @@
+{% block subject %}{% endblock %}
+
+{% block body_text %}{% endblock %}
+
+{% block body_html %}
+    <html>
+        <head>
+            <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        </head>
+
+        <body style="margin:0;">
+            {% block body_html_content %}{% endblock %}
+
+            {% block body_html_footer_action %}{% endblock %}
+        </body>
+    </html>
+{% endblock %}

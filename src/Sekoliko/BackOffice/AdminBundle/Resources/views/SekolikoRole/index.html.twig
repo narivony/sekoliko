@@ -1,0 +1,99 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% block title %}{{ parent() }} {{ 'bo.role.index.title'| trans }} {% endblock %}
+
+{% set menu_role      = true %}
+{% set menu_role_list = true %}
+
+{% block stylesheets %}
+    {{ parent() }}
+
+    <!-- affichage drowpdown dataTable -->
+    <link rel="stylesheet" href="{{ asset ('backoffice/css/custom-table.css') }}">
+{% endblock %}
+
+{% block body %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert green lighten-4 green-text text-darken-2">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    {% for flashMessage in app.session.flashbag.get('error') %}
+        <div class="alert red lighten-4 green-text text-darken-2">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+
+    <div class="card">
+        <div class="title">
+            <h5>{{ 'bo.role.index.title'| trans }}</h5>
+        </div>
+        <div class="content">
+            <div class="row">
+                <div class="col s12">
+                    <div class="box">
+                        <div class="box-header">
+                            <div class="kl-list-count">
+                                <span class="kl-title-count-text"> {{ 'bo.index.total'| trans }} </span><span class="kl-title-count"></span>
+                            </div>
+                        </div>
+
+                        <form action="{{ path('role_delete_group') }}" method="POST" class="form-search">
+                            <div class="row">
+                                <div class="box-body table-responsive col s12">
+                                    <table id="list-role" class="table table-bordered table-striped table-condensed">
+                                        <thead>
+                                        <tr>
+                                            <th>{{ 'bo.role.index.th.nom'| trans }}</th>
+                                        </tr>
+                                        </thead>
+                                        <tbody>
+                                        {% for role in roles %}
+                                            <tr>
+                                                <td>{{ role.rlName }}</td>
+                                            </tr>
+                                        {% endfor %}
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    
+    <script type="text/javascript">
+        $('#list-role').DataTable({
+            "order": [[ 0, "desc" ]],
+            "bProcessing": true,
+            "bFilter": true,
+            "iDisplayLength": 5,
+            "aLengthMenu": [
+                [5, 10, 25, 50, -1],
+                [5, 10, 25, 50, "all"]
+            ],
+            "oLanguage": {
+                "sProcessing": "Traitement...",
+                "oPaginate": {
+                    "sPrevious": "Précédente", // This is the link to the previous page
+                    "sNext": "Suivante", // This is the link to the next page
+                },
+                "sSearch": "Filtrer: ",
+                "sLengthMenu": "Afficher _MENU_ enregistrement par page",
+                "sEmptyTable": "{{ 'bo.datatable.no.enregistrement'|trans }}",
+                "sZeroRecords":  "{{ 'bo.datatable.no.enregistrement'|trans }}",
+                "sInfo": "Voir _TOTAL_ de _PAGE_ pour _PAGES_ entrées",
+                "sInfoEmpty": "Aucun enregistrement",
+            },
+            "footerCallback": function ( row, data, start, end, display ) {
+                $('.kl-title-count').html(display.length);
+            }
+        });
+    </script>
+{% endblock %}

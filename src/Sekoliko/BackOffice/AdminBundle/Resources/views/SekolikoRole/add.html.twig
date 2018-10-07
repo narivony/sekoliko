@@ -1,0 +1,34 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% form_theme form 'form/custom_fields.html.twig' %}
+
+{% block title %}{{ parent() }} Ajout Rôle {% endblock %}
+
+{% set menu_role        = true %}
+{% set menu_role_create = true %}
+
+{% block body %}
+    <div class="row">
+        <div class="col s12">
+            <div class="box box-primary">
+                {{ form_start(form) }}
+                    <div class="box-header kl-body">
+                        <h3 class="box-title">Créer un rôle</h3>
+                    </div>
+                    
+                    <div class="box-body kl-body">
+                        {{ form_row(form.rlName) }}
+                    </div>
+
+                    <div class="box-footer">
+                        <input type="submit" class="btn btn-primary" value="Enregistrer" name="new_role"/>
+                        <a href="{{ path('role_index') }}"
+                           class="btn btn-default pull-left btn-mini-rectif" >
+                            Retour à la liste
+                        </a>
+                    </div>                    
+                {{ form_end(form) }}
+            </div>
+        </div>
+    </div>
+{% endblock %}

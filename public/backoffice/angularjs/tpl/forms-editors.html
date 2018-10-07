@@ -1,0 +1,36 @@
+<!-- Breadcrumbs -->
+<div class="page-title" data-ng-include="'tpl/parts/breadcrumbs.html'"></div>
+<!-- /Breadcrumbs -->
+
+
+<!-- CKEditor -->
+<div class="card-panel">
+  <h4>CKEditor</h4>
+  Con uses <strong>CKEditor</strong>. Full documentation and examples you can see here - <a href="http://ckeditor.com/">http://ckeditor.com/</a>
+
+  <textarea id="ckeditor1"></textarea>
+
+  <br>
+
+  <h4 id="ckeditor2" contenteditable="true">Inline CKEditor</h4>
+  <div id="ckeditor3" contenteditable="true">
+    <strong>Lorem ipsum</strong>, consectetur <i>adipisicing elit</i>. Dolorum sit quia rem, iste fuga quas <del>suscipit rerum blanditiis</del>, voluptatum voluptatibus minima sequi iure unde eum quam nesciunt voluptatem, qui illo.
+  </div>
+</div>
+<!-- /CKEditor -->
+
+<!-- MarkItUp -->
+<div class="card-panel">
+  <h4>MarkItUp</h4>
+  Con uses <strong>MarkItUp</strong>. Full documentation and examples you can see here - <a href="http://markitup.jaysalvat.com/home/">http://markitup.jaysalvat.com/home/</a>
+
+  <textarea class="markItUp"></textarea>
+</div>
+<!-- /MarkItUp -->
+
+<!-- CKEditor init -->
+<script>
+  CKEDITOR.replace( 'ckeditor1' );
+  CKEDITOR.inline( 'ckeditor2' );
+  CKEDITOR.inline( 'ckeditor3' );
+</script>

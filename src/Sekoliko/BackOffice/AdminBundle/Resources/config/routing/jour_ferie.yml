@@ -1,0 +1,34 @@
+jour_ferie_list_ajax:
+    path:     /list-ajax
+    defaults: { _controller: "AdminBundle:SekolikoJourFerie:listAjax" }
+    methods:  GET
+
+jour_ferie_index:
+    path:     /
+    defaults: { _controller: "AdminBundle:SekolikoJourFerie:index" }
+    methods:  GET
+
+jour_ferie_new:
+    path:     /new
+    defaults: { _controller: "AdminBundle:SekolikoJourFerie:new" }
+    methods:  [GET, POST]
+
+jour_ferie_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AdminBundle:SekolikoJourFerie:edit" }
+    methods:  [GET, POST]
+
+jour_ferie_update:
+    path:     /{id}/update
+    defaults: { _controller: "AdminBundle:SekolikoJourFerie:update" }
+    methods:  [POST, PUT]
+
+jour_ferie_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AdminBundle:SekolikoJourFerie:delete" }
+    methods:  [GET, DELETE]
+
+jour_ferie_delete_group:
+    path:     /delete-group
+    defaults: { _controller: "AdminBundle:SekolikoJourFerie:deleteGroup" }
+    methods:  POST

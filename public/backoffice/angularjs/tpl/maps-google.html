@@ -1,0 +1,422 @@
+<!-- Breadcrumbs -->
+<div class="page-title" data-ng-include="'tpl/parts/breadcrumbs.html'"></div>
+<!-- /Breadcrumbs -->
+
+
+<div class="card-panel">
+  Con uses <strong>gmaps.js</strong> to show google maps. See full documentation and examples here - <a href="http://hpneo.github.io/gmaps/">http://hpneo.github.io/gmaps/</a>.
+</div>
+
+<!-- Map with Search -->
+<div class="card-panel">
+  <h4>With Search</h4>
+  <div class="row">
+    <div class="col l6 s12">
+      <!-- Search Field -->
+      <div class="input-field">
+        <input id="map1-search" type="text">
+        <label for="map1-search">Enter Address</label>
+      </div>
+      <!-- /Search Field -->
+
+      <!-- Map -->
+      <div class="map" id="map1"></div>
+      <!-- /Map -->
+    </div>
+    <div class="col l6 s12">
+      <pre class="prettyprint linenums no-margin" style="max-height: 460px;">
+&lt;!-- Search Field -->
+&lt;div class="input-field">
+  &lt;input id="map1-search" type="text">
+  &lt;label for="map1-search">Enter Address&lt;/label>
+&lt;/div>
+&lt;!-- /Search Field -->
+
+&lt;!-- Map -->
+&lt;div class="map" id="map1">&lt;/div>
+&lt;!-- /Map -->
+
+&lt;script>
+  /*
+   * MAP 1
+   */
+  jQuery(function() {
+    "use strict";
+
+    // init map
+    var map = new GMaps({
+        div: '#map1',
+        lat: 40.706086,
+        lng: -73.996864,
+        zoom: 11
+    });
+
+    // redraw map on search
+    function redrawMap(address) {
+      GMaps.geocode({
+        address: address,
+        callback: function(results, status) {
+          if (status == 'OK') {
+            var pos = results[0].geometry.location;
+            map.setCenter(pos.lat(), pos.lng());
+            map.addMarker({
+              lat: pos.lat(),
+              lng: pos.lng()
+            });
+          }
+        }
+      });
+    }
+
+    // search event
+    var searchTimeout;
+    $('#map1-search').on('keyup', function(e) {
+      e.preventDefault();
+      clearTimeout(searchTimeout);
+
+      (function( address ){
+        searchTimeout = setTimeout(function() {
+          redrawMap( address );
+        }, 400);
+      }( $(this).val().trim() ));
+    });
+
+  });
+&lt;/script></pre>
+    </div>
+  </div>
+</div>
+<!-- /Map with Search -->
+
+<!-- With Markers -->
+<div class="card-panel">
+  <h4>With Markers</h4>
+  <div class="row">
+    <div class="col l6 s12">
+      <!-- Map -->
+      <div class="map" id="map2"></div>
+      <!-- /Map -->
+    </div>
+    <div class="col l6 s12">
+      <pre class="prettyprint linenums no-margin" style="max-height: 400px;">
+&lt;!-- Map -->
+&lt;div class="map" id="map2">&lt;/div>
+&lt;!-- /Map -->
+
+&lt;script>
+  /*
+   * MAP 2
+   */
+  jQuery(function() {
+    "use strict";
+
+    // init map
+    var map = new GMaps({
+        div: '#map2',
+        lat: 34.9365255,
+        lng: -85.4373943,
+        zoom: 4
+    });
+
+    // add New York marker
+    map.addMarker({
+      lat: 40.706086,
+      lng: -73.996864,
+      title: 'New York',
+      infoWindow: {
+        content: '&lt;b>New York&lt;/b> is a state in the Northeastern and Mid-Atlantic regions of the &lt;i>United States&lt;/i>.'
+      }
+    });
+
+    // add Chicago marker
+    map.addMarker({
+      lat: 41.8337329,
+      lng: -87.7321554,
+      title: 'Chicago',
+      infoWindow: {
+        content: '&lt;b>Chicago&lt;/b> is the third most populous city in the &lt;i>United States&lt;/i>, after &lt;i>New York City&lt;/i> and &lt;i>Los Angeles&lt;/i>.'
+      }
+    });
+
+    // add Miami marker
+    map.addMarker({
+      lat: 25.782324,
+      lng: -80.2310801,
+      title: 'Miami',
+      infoWindow: {
+        content: '&lt;b>Miami&lt;/b> is a city located on the Atlantic coast in southeastern &lt;i>Florida&lt;/i> and the county seat of Miami-Dade County.'
+      }
+    });
+
+    // add Dallas marker
+    map.addMarker({
+      lat: 32.8206645,
+      lng: -96.7313396,
+      title: 'Dallas',
+      infoWindow: {
+        content: '&lt;b>Dallas&lt;/b> is a major city in Texas and is the largest urban center of the fourth most populous metropolitan area in the &lt;i>United States&lt;/i>.'
+      }
+    });
+
+  });
+&lt;/script>
+</pre>
+    </div>
+  </div>
+</div>
+<!-- /With Markers -->
+
+<!-- Panorama -->
+<div class="card-panel">
+  <h4>Panorama</h4>
+  <div class="row">
+    <div class="col l6 s12">
+      <!-- Map -->
+      <div class="map" id="map3"></div>
+      <!-- /Map -->
+    </div>
+    <div class="col l6 s12">
+      <pre class="prettyprint linenums no-margin" style="max-height: 400px;">
+&lt;!-- Map -->
+&lt;div class="map" id="map3">&lt;/div>
+&lt;!-- /Map -->
+
+&lt;script>
+  /*
+   * MAP 3
+   */
+  jQuery(function() {
+    "use strict";
+
+    // init panorama
+    var panorama = GMaps.createPanorama({
+      el: '#map3',
+      lat: -23.442896,
+      lng: 151.906584,
+      pov: {
+        heading: 340,
+        pitch: -3
+      }
+    });
+  });
+&lt;/script></pre>
+    </div>
+  </div>
+</div>
+<!-- /Panorama -->
+
+<!-- Map Types -->
+<div class="card-panel">
+  <h4>Map Types</h4>
+  <div class="row">
+    <div class="col l6 s12">
+      <!-- Map -->
+      <div class="map" id="map4"></div>
+      <!-- /Map -->
+    </div>
+    <div class="col l6 s12">
+      <pre class="prettyprint linenums no-margin" style="max-height: 400px;">
+&lt;!-- Map -->
+&lt;div class="map" id="map4">&lt;/div>
+&lt;!-- /Map -->
+
+&lt;script>
+  /*
+   * MAP 4
+   */
+  jQuery(function() {
+    "use strict";
+
+    // init map
+    var map = new GMaps({
+      div: '#map4',
+      lat: 40.706086,
+      lng: -73.996864,
+      zoom: 11,
+      mapTypeControlOptions: {
+        mapTypeIds : ["hybrid", "roadmap", "satellite", "terrain", "osm"]
+      }
+    });
+
+    // add osm type
+    map.addMapType("osm", {
+      getTileUrl: function(coord, zoom) {
+        return "http://tile.openstreetmap.org/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
+      },
+      tileSize: new google.maps.Size(256, 256),
+      name: "OpenStreetMap",
+      maxZoom: 18
+    });
+
+    // set default type
+    map.setMapTypeId("osm");
+
+  });
+&lt;/script>
+</pre>
+    </div>
+  </div>
+</div>
+<!-- /Map Types -->
+
+
+<script>
+/*
+ * MAP 1
+ */
+(function($) {
+  "use strict";
+
+  // init map
+  var map = new GMaps({
+      div: '#map1',
+      lat: 40.706086,
+      lng: -73.996864,
+      zoom: 11
+  });
+
+  // redraw map on search
+  function redrawMap(address) {
+    GMaps.geocode({
+      address: address,
+      callback: function(results, status) {
+        if (status == 'OK') {
+          var pos = results[0].geometry.location;
+          map.setCenter(pos.lat(), pos.lng());
+          map.addMarker({
+            lat: pos.lat(),
+            lng: pos.lng()
+          });
+        }
+      }
+    });
+  }
+
+  // search event
+  var searchTimeout;
+  $('#map1-search').on('keyup.conApp', function(e) {
+    e.preventDefault();
+    clearTimeout(searchTimeout);
+
+    (function( address ){
+      searchTimeout = setTimeout(function() {
+        redrawMap( address );
+      }, 400);
+    }( $(this).val().trim() ));
+  });
+
+}(jQuery));
+
+
+
+/*
+ * MAP 2
+ */
+(function($) {
+  "use strict";
+
+  // init map
+  var map = new GMaps({
+      div: '#map2',
+      lat: 34.9365255,
+      lng: -85.4373943,
+      zoom: 4
+  });
+
+  // add New York marker
+  map.addMarker({
+    lat: 40.706086,
+    lng: -73.996864,
+    title: 'New York',
+    infoWindow: {
+      content: '<b>New York</b> is a state in the Northeastern and Mid-Atlantic regions of the <i>United States</i>.'
+    }
+  });
+
+  // add Chicago marker
+  map.addMarker({
+    lat: 41.8337329,
+    lng: -87.7321554,
+    title: 'Chicago',
+    infoWindow: {
+      content: '<b>Chicago</b> is the third most populous city in the <i>United States</i>, after <i>New York City</i> and <i>Los Angeles</i>.'
+    }
+  });
+
+  // add Miami marker
+  map.addMarker({
+    lat: 25.782324,
+    lng: -80.2310801,
+    title: 'Miami',
+    infoWindow: {
+      content: '<b>Miami</b> is a city located on the Atlantic coast in southeastern <i>Florida</i> and the county seat of Miami-Dade County.'
+    }
+  });
+
+  // add Dallas marker
+  map.addMarker({
+    lat: 32.8206645,
+    lng: -96.7313396,
+    title: 'Dallas',
+    infoWindow: {
+      content: '<b>Dallas</b> is a major city in Texas and is the largest urban center of the fourth most populous metropolitan area in the <i>United States</i>.'
+    }
+  });
+
+}(jQuery));
+
+
+
+/*
+ * MAP 3
+ */
+(function($) {
+  "use strict";
+
+  // init panorama
+  var panorama = GMaps.createPanorama({
+    el: '#map3',
+    lat: -23.442896,
+    lng: 151.906584,
+    pov: {
+      heading: 340,
+      pitch: -3
+    }
+  });
+}(jQuery));
+
+
+
+/*
+ * MAP 4
+ */
+(function($) {
+  "use strict";
+
+  // init map
+  var map = new GMaps({
+    div: '#map4',
+    lat: 40.706086,
+    lng: -73.996864,
+    zoom: 11,
+    mapTypeControlOptions: {
+      mapTypeIds : ["hybrid", "roadmap", "satellite", "terrain", "osm"]
+    }
+  });
+
+  // add osm type
+  map.addMapType("osm", {
+    getTileUrl: function(coord, zoom) {
+      return "http://tile.openstreetmap.org/" + zoom + "/" + coord.x + "/" + coord.y + ".png";
+    },
+    tileSize: new google.maps.Size(256, 256),
+    name: "OpenStreetMap",
+    maxZoom: 18
+  });
+
+  // set default type
+  map.setMapTypeId("osm");
+
+}(jQuery));
+
+</script>

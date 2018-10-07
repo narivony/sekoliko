@@ -1,0 +1,49 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% form_theme edit_form 'form/custom_fields.html.twig' %}
+
+{% block title %}{{ parent() }} {{ 'bo.horaire.edit.title'| trans }} {% endblock %}
+
+{% set menu_horaire        = true %}
+{% set menu_horaire_create = true %}
+
+{% block body %}
+    {% for flashMessage in app.session.flashbag.get('success') %}
+        <div class="alert green lighten-4 green-text text-darken-2">
+            {{ flashMessage }}
+        </div>
+    {% endfor %}
+    <div class="content">
+        {{ form_start(edit_form) }}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="box-header">
+                                <h3 class="box-title">{{ 'bo.jour.ferie.add.h3.title'| trans }}</h3>
+                            </div>
+                            {{ form_row(edit_form.hrDateDebutSaison) }}
+                            {{ form_row(edit_form.hrDateFinSaison) }}
+                            {{ form_row(edit_form.hrDebut) }}
+                            {{ form_row(edit_form.hrFin) }}
+                            <div class="box-footer">
+                                <a href="{{ path('horaire_index') }}"
+                                   class="btn btn-default pull-left btn-mini-rectif" >
+                                    {{ 'bo.button.retour'| trans }}
+                                </a>
+                                <input type="submit" class="btn btn-primary"
+                                       value="{{ 'bo.button.modifier'| trans }}" name="update_horaire"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ form_end(edit_form) }}
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+
+{% endblock %}

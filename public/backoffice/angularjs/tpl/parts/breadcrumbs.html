@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col s12 m9 l10">
+    <h1>{{$state.current.data.pageTitle}}</h1>
+
+    <ul>
+      <li ng-repeat="(k, item) in $state.current.data.crumbs">
+        <a href="#" ng-href="{{item.href}}">
+          <span ng-bind-html="item.title"></span>
+        </a>
+        <i class="fa fa-angle-right" ng-if="$state.current.data.crumbs.length - 1 !== k"></i>
+      </li>
+    </ul>
+  </div>
+  <div class="col s12 m3 l2 right-align">
+    <a href="#" class="btn grey lighten-3 grey-text z-depth-0 chat-toggle"><i class="fa fa-comments"></i></a>
+  </div>
+</div>

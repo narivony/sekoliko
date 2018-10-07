@@ -1,0 +1,10 @@
+services:
+    sekoliko.manager.user:
+        class: App\Sekoliko\Service\UserBundle\Manager\UserManager
+        arguments: [ "@doctrine.orm.entity_manager","@service_container" ]
+        public: true
+
+    sekoliko.manager.user.upload:
+        class: App\Sekoliko\Service\UserBundle\Manager\UploadManager
+        arguments: ['@doctrine.orm.entity_manager','%kernel.root_dir%']
+        public: true

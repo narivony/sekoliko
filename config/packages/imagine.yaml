@@ -1,0 +1,34 @@
+liip_imagine :
+    resolvers :
+        default :
+            web_path : ~
+
+    filter_sets :
+        cache : ~
+
+        photo_user_profil :
+            quality : 100
+            filters :
+                upscale:
+                    min: [128, 128]
+                thumbnail:
+                    size: [128, 128]
+                    mode: outbound
+
+        photo_user_profil_miniature :
+            quality : 100
+            filters :
+                upscale:
+                    min: [64, 64]
+                thumbnail:
+                    size: [64, 64]
+                    mode: outbound
+
+        image_post :
+            quality : 100
+            filters :
+                upscale:
+                    min: [357, 223]
+                thumbnail:
+                    size: [357, 223]
+                    mode: outbound

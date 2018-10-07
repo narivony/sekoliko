@@ -1,0 +1,105 @@
+{% set active = 'open' %}
+
+<div class="sidebar" data-active-color="cyan" data-background-color="black" data-image="{{ asset('plugins/assets/img/sidebar-1.jpg') }}">
+    <div class="logo">
+        <a href="#" class="simple-text">
+            NY SEKOLIKO
+        </a>
+    </div>
+    <div class="logo logo-mini">
+        <a href="#" class="simple-text">
+            TZ
+        </a>
+    </div>
+    <div class="sidebar-wrapper">
+        <div class="user">
+            <div class="photo">
+                {% if app.user %}
+                    {% set photo_profil = app.user.usrPhoto %}
+                    {% if photo_profil is null %}
+                        {% set photo_profil = asset('img/no-image-available.png') %}
+                    {% endif %}
+                    <img src="{{ photo_profil|imagine_filter('photo_user_profil') }}"
+                         class="circle" alt="{{ app.user.username }}">
+                {% endif %}
+
+            </div>
+            <div class="info">
+                <a data-toggle="collapse" href="#collapseExample" class="collapsed">
+                    {% if app.user %}
+                        <h3 class="yay-user-info-name">
+                            {{ app.user.usrFullName }}
+                        </h3>
+                    {% endif %}
+                    <b class="caret"></b>
+                </a>
+                <div class="collapse" id="collapseExample">
+                    <ul class="nav">
+                        <li>
+                            <a href="#">My Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Edit Profile</a>
+                        </li>
+                        <li>
+                            <a href="#">Settings</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <ul class="nav">
+            <li class="{% if menu_dashboard is defined %}{{ active }}{% endif %}">
+                <a href="{{ path('dashboard_index') }}">
+                    <i class="material-icons">dashboard</i>
+                    <p>{{ 'bo.sidebar.tableaudebord'| trans }}
+                        <b class="caret"></b>
+                    </p>
+                </a>
+            </li>
+            <li class="{% if menu_user is defined or menu_role is defined %}{{ active }}{% endif %}">
+                <a data-toggle="collapse" href="#pagesExamples">
+                    <i class="material-icons">image</i>
+                    <p>{{ 'bo.sidebar.menu.administrateur'| trans }}
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="pagesExamples">
+                    <ul class="nav">
+                        <li class="{% if menu_user is defined %}{{ active }}{% endif %}">
+                            <a href="{{ path('user_index') }}" class="waves-effect waves-blue">
+                                <i class="material-icons">group</i>
+                                <span>{{ 'bo.sidebar.sousmenu.utilisateur'| trans }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+            <li class="{% if menu_pole is  defined or menu_user_absence_type is defined
+                or menu_jour_ferie is defined  or menu_horaire is defined%}{{ active }}{% endif %}">
+                <a data-toggle="collapse" href="#componentsExamples">
+                    <i class="material-icons">apps</i>
+                    <p>{{ 'bo.sidebar.menu.donneeadministratif'| trans }}
+                        <b class="caret"></b>
+                    </p>
+                </a>
+                <div class="collapse" id="componentsExamples">
+                    <ul class="nav">
+                        <li class="{% if menu_jour_ferie is defined %}{{ active }}{% endif %}">
+                            <a href="{{ path('jour_ferie_index') }}" class="waves-effect waves-blue">
+                                <i class="material-icons">calendar_today</i>
+                                <span>{{ 'bo.sidebar.sousmenu.jour.ferie'| trans }}</span>
+                            </a>
+                        </li>
+                        <li class="{% if menu_horaire is defined %}{{ active }}{% endif %}">
+                            <a href="{{ path('horaire_index') }}" class="waves-effect waves-blue">
+                                <i class="material-icons">watch_later</i>
+                                <span>{{ 'bo.sidebar.sousmenu.horaire'| trans }}</span>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,18 @@
+dashboard_index:
+    path:     /
+    defaults: { _controller: AdminBundle:SekolikoDashboard:index }
+
+dashboard_notif_chrono:
+    path:     /notif-chrono
+    defaults: { _controller: AdminBundle:SekolikoDashboard:notifChrono }
+    methods:  POST
+
+dashboard_list_absences:
+    path:     /list-evenement
+    defaults: { _controller: AdminBundle:SekolikoDashboard:absencesList}
+    methods:  GET
+
+dashboard_all_event_list_ajax:
+    path:     /ajax-list-event/{_user_id}
+    defaults: { _controller: "AdminBundle:SekolikoDashboard:listAllEventAjax", _user_id: "" }
+    methods:  GET

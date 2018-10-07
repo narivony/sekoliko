@@ -1,0 +1,510 @@
+<!-- Breadcrumbs -->
+<div class="page-title" data-ng-include="'tpl/parts/breadcrumbs.html'"></div>
+<!-- /Breadcrumbs -->
+
+<div class="card-panel">
+  Forms are the standard way to receive user inputted data. The transitions and smoothness of these elements are very important because of the inherent user interaction associated with forms.
+</div>
+<br>
+
+<form>
+  
+  <div class="card-panel">
+    <h4>Input Fields</h4>
+
+    <!-- Text Field -->
+    <div class="row">
+      <div class="col l5 s12">
+        <div class="input-field">
+          <input id="input_text" type="text" class="validate">
+          <label for="input_text">Text Field</label>
+        </div>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="input-field">
+  &lt;input id="input_text" type="text" class="validate">
+  &lt;label for="input_text">Text Field&lt;/label>
+&lt;/div></pre>
+      </div>
+    </div>
+    <!-- /Text Field -->
+
+    <!-- Disabled Text Field -->
+    <div class="row">
+      <div class="col l5 s12">
+        <div class="input-field">
+          <input id="input_disabled" type="text" class="validate" disabled>
+          <label for="input_disabled">Disabled Text Field</label>
+        </div>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="input-field">
+  &lt;input id="input_disabled" type="text" class="validate" disabled>
+  &lt;label for="input_disabled">Disabled Text Field&lt;/label>
+&lt;/div></pre>
+      </div>
+    </div>
+    <!-- /Disabled Text Field -->
+
+    <!-- Password Field -->
+    <div class="row">
+      <div class="col l5 s12">
+        <div class="input-field">
+          <input id="input_password" type="password" class="validate">
+          <label for="input_password">Password</label>
+        </div>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="input-field">
+  &lt;input id="input_password" type="password" class="validate">
+  &lt;label for="input_password">Password&lt;/label>
+&lt;/div></pre>
+      </div>
+    </div>
+    <!-- /Password Field -->
+
+    <!-- Email Field -->
+    <div class="row">
+      <div class="col l5 s12">
+        <div class="input-field">
+          <input id="input_email" type="email" class="validate">
+          <label for="input_email">Email</label>
+        </div>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="input-field">
+  &lt;input id="input_email" type="email" class="validate">
+  &lt;label for="input_email">Email&lt;/label>
+&lt;/div></pre>
+      </div>
+    </div>
+    <!-- /Email Field -->
+
+    <!-- Textarea -->
+    <div class="row">
+      <div class="col l5 s12">
+        <div class="input-field">
+          <textarea id="textarea1" class="materialize-textarea"></textarea>
+          <label for="textarea1">Textarea</label>
+        </div>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="input-field">
+  &lt;textarea id="textarea1" class="materialize-textarea">&lt;/textarea>
+  &lt;label for="textarea1">Textarea&lt;/label>
+&lt;/div></pre>
+      </div>
+    </div>
+    <!-- /Textarea -->
+
+    <!-- Text Field with Icon -->
+    <div class="row">
+      <div class="col l5 s12">
+        <div class="input-field">
+          <i class="mdi-action-thumb-up prefix"></i>
+          <input id="input_text_icon" type="text" class="validate">
+          <label for="input_text_icon">Text Field with Icon</label>
+        </div>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="input-field">
+  &lt;i class="mdi-action-thumb-up prefix">&lt;/i>
+  &lt;input id="input_text_icon" type="text" class="validate">
+  &lt;label for="input_text_icon">Text Field with Icon&lt;/label>
+&lt;/div></pre>
+      </div>
+    </div>
+    <!-- /Text Field with Icon -->
+
+    <!-- Textarea with Icon -->
+    <div class="row">
+      <div class="col l5 s12">
+        <div class="input-field">
+          <i class="mdi-communication-chat prefix"></i>
+          <textarea id="textarea_icon" class="materialize-textarea"></textarea>
+          <label for="textarea_icon">Textarea with Icon</label>
+        </div>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="input-field">
+  &lt;i class="mdi-communication-chat prefix">&lt;/i>
+  &lt;textarea id="textarea_icon" class="materialize-textarea">&lt;/textarea>
+  &lt;label for="textarea_icon">Textarea with Icon&lt;/label>
+&lt;/div></pre>
+      </div>
+    </div>
+    <!-- /Textarea with Icon -->
+  </div>
+
+  
+  <div class="card-panel">
+    <h4>Select Fields</h4>
+    
+    <!-- Select -->
+    <label>Materialize Select</label>
+    <div class="row">
+      <div class="col l5 s12">
+
+        <select material-select>
+          <option value="" disabled selected>Choose option</option>
+          <option ng-repeat="value in ['Option 1', 'Option 2', 'Option 3']">{{value}}</option>
+        </select>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;select class="" ng-model="select.value1" material-select>
+  &lt;option ng-repeat="value in select.choices">{{value}}&lt;/option>
+&lt;/select></pre>
+      </div>
+    </div>
+    <!-- /Select -->
+
+    <!-- Default Select -->
+    <label>Browser Select</label>
+    <div class="row">
+      <div class="col l5 s12">
+        <select class="browser-default">
+          <option value="" disabled selected>Choose option</option>
+          <option ng-repeat="value in ['Option 1', 'Option 2', 'Option 3']">{{value}}</option>
+        </select>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;select class="browser-default" ng-model="select.value2">
+  &lt;option ng-repeat="value in select.choices">{{value}}&lt;/option>
+&lt;/select></pre>
+      </div>
+    </div>
+    <!-- /Default Select -->
+
+    <!-- Select Disabled -->
+    <label>Materialize Select Disabled</label>
+    <div class="row">
+      <div class="col l5 s12">
+        <select disabled>
+          <option value="" selected>Choose option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;select disabled>
+  &lt;option value="" selected>Choose option&lt;/option>
+  &lt;option value="1">Option 1&lt;/option>
+  &lt;option value="2">Option 2&lt;/option>
+  &lt;option value="3">Option 3&lt;/option>
+&lt;/select></pre>
+      </div>
+    </div>
+    <!-- /Select Disabled -->
+
+    <!-- Default Select Disabled -->
+    <label>Browser Select Disabled</label>
+    <div class="row">
+      <div class="col l5 s12">
+        <select class="browser-default" disabled>
+          <option value="" selected>Choose option</option>
+          <option value="1">Option 1</option>
+          <option value="2">Option 2</option>
+          <option value="3">Option 3</option>
+        </select>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;select class="browser-default" disabled>
+  &lt;option value="" selected>Choose option&lt;/option>
+  &lt;option value="1">Option 1&lt;/option>
+  &lt;option value="2">Option 2&lt;/option>
+  &lt;option value="3">Option 3&lt;/option>
+&lt;/select></pre>
+      </div>
+    </div>
+    <!-- /Default Select Disabled -->
+  </div>
+
+
+  <div class="card-panel">
+    <!-- Radio Buttons -->
+    <h4>Radio Buttons</h4>
+    <div class="row">
+      <div class="col l5 s12">
+        <p>
+          <input name="radios1" type="radio" id="radios1-1" checked />
+          <label for="radios1-1">One</label>
+        </p>
+        <p>
+          <input name="radios1" type="radio" id="radios1-2" />
+          <label for="radios1-2">Two</label>
+        </p>
+        <p>
+          <input name="radios1" type="radio" id="radios1-3" disabled />
+          <label for="radios1-3">Three</label>
+        </p>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;p>
+  &lt;input name="radios1" type="radio" id="radios1-1" checked />
+  &lt;label for="radios1-1">One&lt;/label>
+&lt;/p>
+&lt;p>
+  &lt;input name="radios1" type="radio" id="radios1-2" />
+  &lt;label for="radios1-2">Two&lt;/label>
+&lt;/p>
+&lt;p>
+  &lt;input name="radios1" type="radio" id="radios1-3" disabled />
+  &lt;label for="radios1-3">Three&lt;/label>
+&lt;/p></pre>
+      </div>
+    </div>
+    <!-- /Radio Buttons -->
+
+    <!-- Radio Buttons with Gap -->
+    <p>Radio buttons with gap.</p>
+    <div class="row">
+      <div class="col l5 s12">
+        <p>
+          <input class="with-gap" name="radios2" type="radio" id="radios2-1" checked />
+          <label for="radios2-1">One</label>
+        </p>
+        <p>
+          <input class="with-gap" name="radios2" type="radio" id="radios2-2" />
+          <label for="radios2-2">Two</label>
+        </p>
+        <p>
+          <input class="with-gap" name="radios2" type="radio" id="radios2-3" disabled />
+          <label for="radios2-3">Three</label>
+        </p>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;p>
+  &lt;input class="with-gap" name="radios2" type="radio" id="radios2-1" checked />
+  &lt;label for="radios2-1">One&lt;/label>
+&lt;/p>
+&lt;p>
+  &lt;input class="with-gap" name="radios2" type="radio" id="radios2-2" />
+  &lt;label for="radios2-2">Two&lt;/label>
+&lt;/p>
+&lt;p>
+  &lt;input class="with-gap" name="radios2" type="radio" id="radios2-3" disabled />
+  &lt;label for="radios2-3">Three&lt;/label>
+&lt;/p></pre>
+      </div>
+    </div>
+    <!-- /Radio Buttons with Gap -->
+  </div>
+
+  <div class="card-panel">
+    <!-- Checkboxes -->
+    <h4>Checkboxes</h4>
+    <div class="row">
+      <div class="col l5 s12">
+        <p>
+          <input type="checkbox" id="checkbox1" />
+          <label for="checkbox1">One</label>
+        </p>
+        <p>
+          <input type="checkbox" id="checkbox2" checked="checked" />
+          <label for="checkbox2">Two</label>
+        </p>
+        <p>
+          <input type="checkbox" id="checkbox3" checked="checked" disabled="disabled" />
+          <label for="checkbox3">Three</label>
+        </p>
+        <p>
+            <input type="checkbox" id="checkbox4" disabled="disabled" />
+            <label for="checkbox4">Four</label>
+        </p>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;p>
+  &lt;input type="checkbox" id="checkbox1" />
+  &lt;label for="checkbox1">One&lt;/label>
+&lt;/p>
+&lt;p>
+  &lt;input type="checkbox" id="checkbox2" checked="checked" />
+  &lt;label for="checkbox2">Two&lt;/label>
+&lt;/p>
+&lt;p>
+  &lt;input type="checkbox" id="checkbox3" checked="checked" disabled="disabled" />
+  &lt;label for="checkbox3">Three&lt;/label>
+&lt;/p>
+&lt;p>
+    &lt;input type="checkbox" id="checkbox4" disabled="disabled" />
+    &lt;label for="checkbox4">Four&lt;/label>
+&lt;/p></pre>
+      </div>
+    </div>
+    <!-- /Checkboxes -->
+  </div>
+
+  <div class="card-panel">
+    <!-- Switches -->
+    <h4>Switches</h4>
+    <div class="row">
+      <div class="col l5 s12">
+        <p class="switch">
+          <label>
+            <input type="checkbox" />
+            <span class="lever"></span>
+            One
+          </label>
+        </p>
+        <p class="switch">
+          <label>
+            <input type="checkbox" checked />
+            <span class="lever"></span>
+            Two
+          </label>
+        </p>
+        <p class="switch">
+          <label>
+            <input type="checkbox" />
+            <span class="lever"></span>
+            Three
+          </label>
+        </p>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;p class="switch">
+  &lt;label>
+    &lt;input type="checkbox" />
+    &lt;span class="lever">&lt;/span>
+    One
+  &lt;/label>
+&lt;/p>
+&lt;p class="switch">
+  &lt;label>
+    &lt;input type="checkbox" checked />
+    &lt;span class="lever">&lt;/span>
+    Two
+  &lt;/label>
+&lt;/p>
+&lt;p class="switch">
+  &lt;label>
+    &lt;input type="checkbox" />
+    &lt;span class="lever">&lt;/span>
+    Three
+  &lt;/label>
+&lt;/p></pre>
+      </div>
+    </div>
+    <!-- /Switches -->
+  </div>
+
+  <div class="card-panel">
+    <!-- Ratings -->
+    <h4>Ratings</h4>
+    <div class="row">
+      <div class="col l5 s12">
+        
+        <!-- Ratings with Stars -->
+        <div class="rating">
+          <input type="radio" id="rating-star-5" name="rating-star" value="5">
+          <label for="rating-star-5"><i class="ion-star"></i></label>
+          <input type="radio" id="rating-star-4" name="rating-star" value="4">
+          <label for="rating-star-4"><i class="ion-star"></i></label>
+          <input type="radio" id="rating-star-3" name="rating-star" value="3" checked>
+          <label for="rating-star-3"><i class="ion-star"></i></label>
+          <input type="radio" id="rating-star-2" name="rating-star" value="2">
+          <label for="rating-star-2"><i class="ion-star"></i></label>
+          <input type="radio" id="rating-star-1" name="rating-star" value="1">
+          <label for="rating-star-1"><i class="ion-star"></i></label>
+        </div>
+        <!-- /Ratings with Stars -->
+        
+        <br>
+        <!-- Ratings with Sun -->
+        <div class="rating">
+          <input type="radio" id="rating-5" name="rating" value="5">
+          <label for="rating-5"><i class="wi wi-day-sunny"></i></label>
+          <input type="radio" id="rating-4" name="rating" value="4">
+          <label for="rating-4"><i class="wi wi-day-sunny"></i></label>
+          <input type="radio" id="rating-3" name="rating" value="3">
+          <label for="rating-3"><i class="wi wi-day-sunny"></i></label>
+          <input type="radio" id="rating-2" name="rating" value="2">
+          <label for="rating-2"><i class="wi wi-day-sunny"></i></label>
+          <input type="radio" id="rating-1" name="rating" value="1" checked>
+          <label for="rating-1"><i class="wi wi-day-sunny"></i></label>
+        </div>
+        <!-- /Ratings with Sun -->
+
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;!-- Ratings with Stars -->
+&lt;div class="rating">
+  &lt;input type="radio" id="rating-star-5" name="rating-star" value="5">
+  &lt;label for="rating-star-5">&lt;i class="ion-star">&lt;/i>&lt;/label>
+  &lt;input type="radio" id="rating-star-4" name="rating-star" value="4">
+  &lt;label for="rating-star-4">&lt;i class="ion-star">&lt;/i>&lt;/label>
+  &lt;input type="radio" id="rating-star-3" name="rating-star" value="3" checked>
+  &lt;label for="rating-star-3">&lt;i class="ion-star">&lt;/i>&lt;/label>
+  &lt;input type="radio" id="rating-star-2" name="rating-star" value="2">
+  &lt;label for="rating-star-2">&lt;i class="ion-star">&lt;/i>&lt;/label>
+  &lt;input type="radio" id="rating-star-1" name="rating-star" value="1">
+  &lt;label for="rating-star-1">&lt;i class="ion-star">&lt;/i>&lt;/label>
+&lt;/div>
+&lt;!-- /Ratings with Stars -->
+
+&lt;br>
+&lt;!-- Ratings with Sun -->
+&lt;div class="rating">
+  &lt;input type="radio" id="rating-5" name="rating" value="5">
+  &lt;label for="rating-5">&lt;i class="wi wi-day-sunny">&lt;/i>&lt;/label>
+  &lt;input type="radio" id="rating-4" name="rating" value="4">
+  &lt;label for="rating-4">&lt;i class="wi wi-day-sunny">&lt;/i>&lt;/label>
+  &lt;input type="radio" id="rating-3" name="rating" value="3">
+  &lt;label for="rating-3">&lt;i class="wi wi-day-sunny">&lt;/i>&lt;/label>
+  &lt;input type="radio" id="rating-2" name="rating" value="2">
+  &lt;label for="rating-2">&lt;i class="wi wi-day-sunny">&lt;/i>&lt;/label>
+  &lt;input type="radio" id="rating-1" name="rating" value="1" checked>
+  &lt;label for="rating-1">&lt;i class="wi wi-day-sunny">&lt;/i>&lt;/label>
+&lt;/div>
+&lt;!-- Ratings with Sun --></pre>
+      </div>
+    </div>
+    <!-- /Ratings -->
+  </div>
+
+  
+  <div class="card-panel">
+    <!-- File Input -->
+    <h4>File Input</h4>
+    <div class="row">
+      <div class="col l5 s12">
+        <div class="file-field input-field">
+          <input class="file-path validate" type="text"/>
+          <div class="btn">
+            <span>File</span>
+            <input type="file" />
+          </div>
+        </div>
+      </div>
+      <div class="col l7 s12">
+        <pre class="prettyprint linenums no-margin">
+&lt;div class="file-field input-field">
+  &lt;input class="file-path validate" type="text"/>
+  &lt;div class="btn">
+    &lt;span>File&lt;/span>
+    &lt;input type="file" />
+  &lt;/div>
+&lt;/div></pre>
+      </div>
+    </div>
+    <!-- /File Input -->
+  </div>
+
+</form>

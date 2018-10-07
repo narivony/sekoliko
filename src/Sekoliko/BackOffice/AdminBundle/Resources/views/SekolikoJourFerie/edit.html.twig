@@ -1,0 +1,39 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% form_theme edit_form 'form/fields.html.twig' %}
+
+{% block title %}{{ parent() }} {{ 'bo.jour.ferie.edit.title'| trans }} {% endblock %}
+
+{% set menu_jour_ferie        = true %}
+{% set menu_jour_ferie_create = true %}
+
+
+{% block body %}
+    <div class="content">
+        {{ form_start(edit_form) }}
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-content">
+                            <div class="box-header">
+                                <h3 class="box-title">{{ 'bo.jour.ferie.add.h3.title'| trans }}</h3>
+                            </div>
+                            {{ form_row(edit_form.jrFerNom) }}
+                            {{ form_row(edit_form.jrFerDate) }}
+                            <div class="box-footer">
+                                <a href="{{ path('jour_ferie_index') }}"
+                                   class="btn btn-default pull-left btn-mini-rectif kl-btn-post kl-btn-footer " >
+                                    {{ 'bo.button.retour'| trans }}
+                                </a>
+                                <input type="submit" class="btn btn-primary kl-btn-post kl-btn-footer"
+                                       value="{{ 'bo.index.td.title.modifier'| trans }}" name="update_jour_ferie"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {{ form_end(edit_form) }}
+    </div>
+{% endblock %}

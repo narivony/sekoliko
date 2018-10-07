@@ -1,0 +1,10 @@
+
+.fc-scroller { overflow-x: visible !important; }
+.fc-row .fc-rigid { overflow: visible!important; }
+.fc-day-grid .fc-unselectable {overflow-x: auto!important;}
+.kl-modal-close{margin: 10px 15px 0px 0px!important;opacity: 1!important;}
+.kl-modal-close i {color: white!important;}
+.kl-modal-header h3 {text-align: center!important;}
+.kl-header-title {display: grid !important; padding: 15px!important;}
+.kl-content-projet-details { display: -webkit-inline-box;  margin-left: 25%; }
+.kl-select-user { width: 250px!important; }

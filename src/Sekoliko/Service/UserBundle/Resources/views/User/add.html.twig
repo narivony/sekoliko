@@ -1,0 +1,59 @@
+{% extends 'backoffice/base_admin.html.twig' %}
+
+{% form_theme form 'form/custom_fields.html.twig' %}
+
+{% block title %}{{ parent() }} {{ 'bo.user.add.title'| trans }} {% endblock %}
+
+{% set menu_user        = true %}
+{% set menu_user_create = true %}
+
+{% block body %}
+    <div class="content">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="box-header text-center">
+                            <h2 class="box-title">Créer un utilisateur</h2>
+                        </div>
+                        <div class="box box-primary">
+                            {{ form_start(form, {'attr': {
+                                'data-toggle':"validator",
+                            }}) }}
+                            <div class="card-content">
+                                <h4>Informations Personnelles</h4>
+                                {{ form_row(form.usrLastname) }}
+                                {{ form_row(form.usrFirstname) }}
+                                {{ form_row(form.usrAddress) }}
+                                {{ form_row(form.email) }}
+                                {{ form_row(form.usrPhone) }}
+                                {{ form_row(form.usrPhoto) }}
+                                {{ form_row(form.usrColor) }}
+                                {{ form_row(form.enabled) }}
+                                <hr>
+                                {{ form_row(form.username) }}
+                                {{ form_row(form.plainPassword.first) }}
+                                {{ form_row(form.plainPassword.second) }}
+                            </div>
+                            <div class="text-right">
+                                <a href="{{ path('user_index') }}"
+                                   class="btn btn-default btn-mini-rectif" >
+                                    {{ 'bo.button.retour'| trans }}
+                                </a>
+                                <input type="submit" class="btn btn-primary" value="{{ 'bo.button.enregistrer'| trans }}"
+                                       name="new_user"/>
+                            </div>
+                            {{ form_end(form) }}
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+
+    <script type="text/javascript" src="{{ asset('backoffice/js/edit.user.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('backoffice/js/jscolor.js') }}"></script>
+{% endblock %}

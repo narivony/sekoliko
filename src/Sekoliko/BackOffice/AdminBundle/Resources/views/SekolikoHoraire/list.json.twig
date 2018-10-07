@@ -1,0 +1,37 @@
+{% spaceless %}
+    {% set aaData = {} %}
+    {% for horaire in values %}
+
+        {% set input = '<input type="checkbox" value="' ~horaire.id~ '" name="delete[]" />' %}
+
+        {% set action =
+        '<div class="kl-td">
+            <a class="btn green kl-button-index tooltipped"
+               href="' ~ path('horaire_edit', { 'id': horaire.id }) ~ '"
+               data-position="top" data-delay="50" data-tooltip="' ~ 'bo.index.td.title.modifier'|trans ~'">
+                <i class="fa fa-edit"></i>
+            </a>
+            <a class="btn red kl-button-index kl-remove-elt red tooltipped"
+               href="' ~ path('horaire_delete', { 'id': horaire.id }) ~ '"
+               data-position="top" data-delay="50" data-tooltip="' ~ 'bo.index.td.title.supprimer'|trans ~'">
+                <i class="fa fa-trash"></i>
+            </a>
+         </div>'
+        %}
+
+        {%
+            set value = [
+                horaire.hrDateDebutSaison | date('d/m/Y'),
+                horaire.hrDateFinSaison | date('d/m/Y'),
+                horaire.hrDebut|date('h:i'),
+                horaire.hrFin|date('h:i'),
+                horaire.getHrDuree,
+                action
+            ]
+        %}
+        {% set aaData = aaData|merge({ (loop.index0): value }) %}
+    {% endfor %}
+{% endspaceless %}
+
+{% set data_json = data|merge({ 'aaData': aaData} ) %}
+{{ data_json|json_encode|raw }}
