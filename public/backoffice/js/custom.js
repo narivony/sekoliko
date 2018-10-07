@@ -24,13 +24,13 @@ $(document).ready(function () {
         }
         if ($(window).width()<= 440 ){
             $('.kl-add-btn-top-list button').text('+ Nouveau ');
-            $('.kl-delete-btn').text('Supprimer ')
+            $('.kl-delete-btn').text('Supprimer ');
         }
     });
     // $('.modal-body').mCustomScrollbar();
     // $('.modal-content').mCustomScrollbar();
 
-    $( "#teste" ).validate( {
+    $( "#teste").validate( {
         rules: {
             "sekoliko_userbundle_user[usrFirstname]": "required",
             "sekoliko_userbundle_user[usrLastname]": "required",

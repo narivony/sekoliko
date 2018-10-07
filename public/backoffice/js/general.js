@@ -121,6 +121,9 @@ $(function() {
     }).on('dp.change', function (e) {
         var min_date = new Date(e.date.valueOf());
         $('.kl-datetimepicker--date-fin-saison').datetimepicker('minDate', min_date);
+        $('.kl-datetimepicker--date-fin-saison').datetimepicker({
+            zIndex: 2048,
+        });
 
     });
 

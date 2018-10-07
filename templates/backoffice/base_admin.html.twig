@@ -8,20 +8,22 @@
         <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
         {% block stylesheets %}
             <!-- Bootstrap -->
+            <!-- material -->
+            <link rel="stylesheet" type="text/css" href="{{ asset('plugins/assets/css/material-dashboard.css') }}" />
             <link href="{{ asset('plugins/assets/css/bootstrap.min.css') }}" rel="stylesheet" />
             <link href="{{ asset('plugins/assets/css/fontawesome.css') }}" rel="stylesheet" />
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
             <link href="{{ asset('plugins/assets/css/material-icon.css') }}" rel="stylesheet" />
             <link href="{{ asset('plugins/assets/css/custom.css') }}" rel="stylesheet" />
-            <!-- material -->
-            <link rel="stylesheet" type="text/css" href="{{ asset('plugins/assets/css/material-dashboard.css') }}" />
+            <link rel="stylesheet" href="{{ asset('plugins/assets/css/') }}">
+            <link rel="stylesheet" type="text/css" href="{{ asset('plugins/assets/css/datepicker.css') }}" />
             <!--[if lt IE 9]>
             <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
             <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
             <script src="{{ asset('backoffice/bower_components/html5shiv/dist/html5shiv.min.js') }}"></script>
             <![endif]-->
         {% endblock %}
-        <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon.ico') }}" />
+        <link rel="icon" type="image/x-icon" href="{{ asset('plugins/assets/img/Design.svg') }}" />
     </head>
     <body>
 
@@ -51,8 +53,6 @@
             </div>
         </section>
     </div>
-
-
 
         {% block javascripts %}
             <!-- jQuery -->
@@ -91,10 +91,8 @@
             <script src="{{ asset('backoffice/js/fastclick.js') }}"></script>
             <script src="{{ asset('backoffice/js/custom.js') }}"></script>
             <script src="{{ asset('backoffice/js/general.js') }}"></script>
-            <script src="{{ asset('backoffice/js/lot.equipe.js') }}"></script>
             <script src="{{ asset('backoffice/js/calendar.js') }}"></script>
             <script src="{{ asset('backoffice/js/validate.js') }}"></script>
-            <script src="{{ asset('backoffice/js/custom.select.js') }}"></script>
         {% endblock %}
     </body>
 </html>

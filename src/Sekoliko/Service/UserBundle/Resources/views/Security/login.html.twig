@@ -2,35 +2,30 @@
 
 {% block fos_user_content %}
 
-    <section id="sign-in">
-        <canvas id="bubble-canvas"></canvas>
+    <section class="col-md-4 col-sm-6 col-md-offset-4 col-sm-offset-3" id="sign-in">
         <form action="{{ path('fos_user_security_check') }}" method="post">
             <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}" />
-            <div class="row links">
-                <div class="col s6 logo">
-                    <img src="#" alt="logo" />
+            <div class="card card-login">
+                <div class="card-header text-center sk-card-login" data-background-color="cyan">
+                    <h4 class="card-title">Ny Sekoliko</h4>
                 </div>
-                <div class="col s6 right-align">
-                    <strong>Accès Sekoliko management</strong>
+                <div class="card-content">
+                    <div class="input-field">
+                        <i class="fa fa-user prefix"></i>
+                        <label for="" class="control-label">Nom d'utilisateur</label>
+                        <input id="username-input username" type="text" name="_username" value="" class="form-control validate">
+                    </div>
+                    <div class="input-field">
+                        <i class="fa fa-unlock-alt prefix"></i>
+                        <label for="" class="control-label">Nom d'utilisateur</label>
+                        <input id="password-input password" type="password" name="_password" class="form-control validate">
+                    </div>
                 </div>
-            </div>
-            <div class="card-panel clearfix">
-                <div class="row">
-                    <div class="col"></div>
+                <div class="footer text-center">
+                    <button id="login-form-submit" class="btn btn-rose btn-simple btn-wd btn-lg sk-login-bouton">
+                        Connexion
+                    </button>
                 </div>
-                <div class="input-field">
-                    <i class="fa fa-user prefix"></i>
-                    <input id="username-input username" type="text" name="_username" value="" class="validate">
-                    <label for="username-input">Nom d'utilisateur</label>
-                </div>
-                <div class="input-field">
-                    <i class="fa fa-unlock-alt prefix"></i>
-                    <input id="password-input password" type="password" name="_password" class="validate">
-                    <label for="password-input">Mot de passe</label>
-                </div>
-                <button id="login-form-submit" class="waves-effect waves-light btn-large z-depth-0 z-depth-1-hover">
-                    Connexion
-                </button>
             </div>
             {# S'il y a une erreur, on l'affiche dans un joli cadre #}
             {% if error is defined %}

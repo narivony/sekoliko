@@ -11,3 +11,8 @@
 th{background: cyan;color: black}
 td{text-align: center!important;}
 th{text-align: center!important;}
+.sk-card-login{background: #136e77!important;}
+.sk-login-bouton {background: #136e77!important;color: white!important;}
+.sk-wrapper-fullpage { background: #470877!important; }
+.bootstrap-datetimepicker-widget.drowpdown-menu { z-index: 9999999999!important;display: block!important;}
+.form-group.is-focused{ z-index: 2!important; }
