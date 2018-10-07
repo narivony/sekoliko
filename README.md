@@ -10,3 +10,7 @@ __
 __
 
 - Base dans le dossier /data/dump
+
+__
+
+- Configuration base de donne dans le fichier .env apres l'installation du composer
