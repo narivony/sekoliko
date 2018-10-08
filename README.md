@@ -18,3 +18,10 @@ __
 __
 
 - Configuration base de donne dans le fichier .env apres l'installation du composer
+
+__ 
+
+- Login : julien@techzara.mg mdp: 123456
+
+
+**Made with love**
