@@ -1,5 +1,9 @@
 # sekoliko
-projet pour les ecoles
+Projet gestion scolaire : mise en place d'une application pour suivi emploie du temps, salle libre, eleves, administration 
+
+(payement),
+
+Mise en place d'une system e-learning, partage tutoriels. 
 
 Installation 
 
